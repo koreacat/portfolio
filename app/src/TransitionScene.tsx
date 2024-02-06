@@ -1,10 +1,10 @@
-import { ReactNode, useState, Children } from "react";
+import React, { ReactNode, useState, Children } from "react";
 
-interface TransitionSceneProps {
+interface TransitionWrapProps {
   children?: ReactNode;
 }
 
-const TransitionScene = ({ children }: TransitionSceneProps) => {
+const TransitionWrap = ({ children }: TransitionWrapProps) => {
   const [index, setIndex] = useState<number>(0);
   const [isTransitioning, setIsTransitioning] = useState<boolean>(false);
 
@@ -27,12 +27,22 @@ const TransitionScene = ({ children }: TransitionSceneProps) => {
   return (
     <div className="w-full h-full overflow-hidden" onTransitionEnd={handleTransitionEnd} onWheel={handleWheel}>
       <div
-        className="w-full scrollArea"
-        style={{ transition: 'all 1s ease-in-out', transform: `translate3d(0, -${index * 100}vh, 0)` }}>
+        className="w-full scrollArea "
+        style={{ transition: isTransitioning ? 'transform .75s ease-in-out' : undefined, transform: `translate3d(0, -${index * 100}vh, 0)` }}>
         {children}
       </div>
     </div>
   )
 }
 
-export default TransitionScene;
+const Scene = (props: React.HTMLAttributes<HTMLDivElement>) => {
+  return (
+    <div {...props} className={`shrink-0 w-screen h-screen text-my-color ${props.className}`}>
+      scene
+    </div>
+  )
+}
+
+export const Transition = Object.assign(TransitionWrap, {
+  Scene: Scene,
+});

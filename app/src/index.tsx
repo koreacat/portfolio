@@ -1,16 +1,13 @@
 'use client';
-import Scene1 from "./Scene1";
-import Scene2 from "./Scene2";
-import Scene3 from "./Scene3";
-import TransitionScene from "./TransitionScene";
+import {Transition} from "./TransitionScene";
 
 const Index = () => {
   return (
-    <TransitionScene>
-      <Scene1 />
-      <Scene2 />
-      <Scene3 />
-    </TransitionScene>
+    <Transition>
+      <Transition.Scene className="bg-my-bg-color"/>
+      <Transition.Scene className="bg-my-bg-color"/>
+      <Transition.Scene className="bg-my-bg-color"/>
+    </Transition>
   );
 };
 
