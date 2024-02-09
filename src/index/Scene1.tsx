@@ -1,5 +1,6 @@
 'use client'
 
+import TransitionText, { TransitionTextType } from '@/components/TransitionText'
 import dynamic from 'next/dynamic'
 import { Suspense } from 'react'
 
@@ -7,7 +8,7 @@ const Duck = dynamic(() => import('@/components/canvas/Duck').then((mod) => mod.
 const View = dynamic(() => import('@/components/canvas/View').then((mod) => mod.View), {
   ssr: false,
   loading: () => (
-    <div className='flex h-96 w-full flex-col items-center justify-center'>
+    <div className='flex w-full h-48 sm:h-64 flex-col items-center justify-center '>
       <svg className='-ml-1 mr-3 h-5 w-5 animate-spin text-black' fill='none' viewBox='0 0 24 24'>
         <circle className='opacity-25' cx='12' cy='12' r='10' stroke='currentColor' strokeWidth='4' />
         <path
@@ -22,18 +23,36 @@ const View = dynamic(() => import('@/components/canvas/View').then((mod) => mod.
 
 const Common = dynamic(() => import('@/components/canvas/View').then((mod) => mod.Common), { ssr: false })
 
-const Scene1 = () => {
+interface Scene1Props {
+  transitionType: TransitionTextType;
+}
+
+const Scene1 = ({ transitionType }: Scene1Props) => {
 
   return (
-    <div className='mx-auto flex w-full flex-col flex-wrap items-center p-12 md:flex-row  '>
-      <div className='relative my-12 h-48 w-full' onWheel={(e) => e.stopPropagation()}>
-        <View orbit className='bg-red-100 relative h-full sm:h-64 sm:w-full'>
+    <div className='flex w-full flex-col flex-wrap items-center'>
+      <div className='relative h-48 w-full sm:h-64' onWheel={(e) => e.stopPropagation()}>
+        <View orbit className='relative h-full sm:h-64 '>
           <Suspense fallback={null}>
             <Duck route='/blob' scale={1} position={[0, -0.5, 0]} />
             <Common />
           </Suspense>
         </View>
       </div>
+
+
+      <TransitionText className='text-black' type={transitionType} fadeInDelay='1s'>
+        👋 안녕하세요!
+      </TransitionText>
+
+      <TransitionText className='text-black' type={transitionType} fadeInDelay='1.5s'>
+        동료와 경험을 나누며
+      </TransitionText>
+
+      <TransitionText className='text-black' type={transitionType} fadeInDelay='2s'>
+        성장의 기쁨을 함께하는 개발자 지경민 입니다.
+      </TransitionText>
+
     </div>
   )
 }
