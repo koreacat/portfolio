@@ -37,7 +37,7 @@ const TransitionWrap = ({ children, onTransitionEnd, onTransitionStart }: Transi
     const deltaY = e.touches[0].clientY - touchStartY;
     const threshold = 50; // Adjust this threshold as needed
     if (Math.abs(deltaY) > threshold) {
-      const newIndex = index + (deltaY > 0 ? 1 : -1);
+      const newIndex = index + (deltaY > 0 ? -1 : 1);
       const length = Children.count(children);
 
       if (newIndex >= 0 && newIndex < length) {

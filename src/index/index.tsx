@@ -34,7 +34,7 @@ const Index = () => {
           <Scene1 transitionType={getTransitionType(0)} />
         </Transition.Scene>
         <Transition.Scene className="bg-my-bg-color">
-          <Scene2 />
+          <Scene2 transitionType={getTransitionType(1)} />
         </Transition.Scene>
         <Transition.Scene className={open ? "bg-my-bg-color" : "transtarent"}>
           <Scene3 transitionType={getTransitionType(2)} />

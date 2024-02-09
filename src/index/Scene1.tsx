@@ -41,15 +41,15 @@ const Scene1 = ({ transitionType }: Scene1Props) => {
       </div>
 
 
-      <TransitionText className='text-black' type={transitionType} fadeInDelay='1s'>
+      <TransitionText className='text-black text-3xl' type={transitionType} fadeInDelay='1s'>
         👋 안녕하세요!
       </TransitionText>
 
-      <TransitionText className='text-black' type={transitionType} fadeInDelay='1.5s'>
+      <TransitionText className='text-black text-3xl' type={transitionType} fadeInDelay='1.5s'>
         동료와 경험을 나누며
       </TransitionText>
 
-      <TransitionText className='text-black' type={transitionType} fadeInDelay='2s'>
+      <TransitionText className='text-black text-3xl' type={transitionType} fadeInDelay='2s'>
         성장의 기쁨을 함께하는 개발자 지경민 입니다.
       </TransitionText>
 
