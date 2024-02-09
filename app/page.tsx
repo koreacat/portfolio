@@ -1,5 +1,5 @@
-import Index from "./src/index";
+import Index from "@/index";
 
-export default function IndexPage() {
+export default function Page() {
   return <Index />
 }

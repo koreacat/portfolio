@@ -1,3 +1,5 @@
+'use client'
+
 import React, { ReactNode, useState, Children } from "react";
 
 interface TransitionWrapProps {
@@ -35,10 +37,15 @@ const TransitionWrap = ({ children }: TransitionWrapProps) => {
   )
 }
 
-const Scene = (props: React.HTMLAttributes<HTMLDivElement>) => {
+interface SceneProps extends React.HTMLAttributes<HTMLDivElement> {
+  children?: ReactNode;
+  className?: string;
+}
+
+const Scene = (props: SceneProps) => {
   return (
-    <div {...props} className={`shrink-0 w-screen h-screen text-my-color ${props.className}`}>
-      scene
+    <div {...props} className={`shrink-0 w-screen h-screen text-my-color ${props?.className}`}>
+      {props?.children}
     </div>
   )
 }
