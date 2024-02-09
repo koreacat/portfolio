@@ -8,15 +8,15 @@ export default function Scene2({ transitionType }: Scene2Props) {
   return (
     <div className="flex flex-wrap flex-col items-center justify-center w-full h-full">
       <TransitionText className="text-white text-7xl" type={transitionType} fadeInDelay="0s">
-        CONTACT
+        SKILL
       </TransitionText>
 
-      <TransitionText className="text-black text-7xl" type={transitionType} fadeInDelay="0.5s">
-        CONTACT
+      <TransitionText className="text-my-color text-7xl" type={transitionType} fadeInDelay="0.25s">
+        SKILL
       </TransitionText>
 
-      <TransitionText className="text-black text-7xl" type={transitionType} fadeInDelay="1s">
-        CONTACT
+      <TransitionText className="text-black text-7xl" type={transitionType} fadeInDelay=".5s">
+        SKILL
       </TransitionText>
     </div>
   )

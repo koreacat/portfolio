@@ -28,7 +28,6 @@ interface Scene1Props {
 }
 
 const Scene1 = ({ transitionType }: Scene1Props) => {
-
   return (
     <div className='flex w-full flex-col flex-wrap items-center'>
       <div className='relative h-48 w-full sm:h-64' onWheel={(e) => e.stopPropagation()}>
@@ -50,9 +49,12 @@ const Scene1 = ({ transitionType }: Scene1Props) => {
       </TransitionText>
 
       <TransitionText className='text-black text-3xl' type={transitionType} fadeInDelay='2s'>
-        성장의 기쁨을 함께하는 개발자 지경민 입니다.
+        성장의 기쁨을 함께하는
       </TransitionText>
 
+      <TransitionText className='text-black text-3xl' type={transitionType} fadeInDelay='2.5s'>
+        개발자 지경민 입니다.
+      </TransitionText>
     </div>
   )
 }

@@ -18,12 +18,12 @@ module.exports = {
       },
       keyframes: {
         'fade-in': {
-          '0%': { opacity: 0 },
-          '100%': { opacity: 1 },
+          '0%': { opacity: 0, transform: 'translateY(-15%)' },
+          '100%': { opacity: 1, transform: 'translateY(0)' },
         },
         'fade-out': {
-          '0%': { opacity: 1 },
-          '100%': { opacity: 0 },
+          '0%': { opacity: 1, transform: 'translateY(0)' },
+          '100%': { opacity: 0, transform: 'translateY(15%)' },
         },
       },
     },

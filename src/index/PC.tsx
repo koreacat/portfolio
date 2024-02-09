@@ -26,7 +26,7 @@ function Model({ open, ...props }) {
     screenRef.current.rotation.x = THREE.MathUtils.lerp(screenRef.current.rotation.x, open ? -0.425 : 1.575, 0.02);
   })
 
-  const newMaterial = new THREE.MeshStandardMaterial({ color: '#191919' });
+  const newMaterial = new THREE.MeshStandardMaterial({ color: '#262620' });
 
   return (
     <group ref={groupRef} {...props} dispose={null}>
@@ -54,9 +54,9 @@ interface PCProps {
 
 const PC = ({ open }: PCProps) => {
   return (
-    <div className='fixed top-0 w-full h-full '>
-      <web.main className='w-full h-full'>
-        <Canvas dpr={[1, 2]} camera={{ position: [0, 0, -30], fov: 25 }}>
+    <div className='fixed flex items-center top-0 w-full h-full'>
+      <web.main className='w-full h-full md:h-full'>
+        <Canvas dpr={[1, 2]} camera={{ position: [0, 0, -30], fov: 35 }}>
           <Suspense fallback={null}>
             <group rotation={[0, Math.PI, 0]}>
               <Model open={open} />

@@ -26,18 +26,9 @@ const TransitionText = ({ children, className, type, fadeInDelay, fadeOutDelay }
   const getStyle = () => {
     if (type === TransitionTextEnum["fade-in"]) return { animationFillMode: 'forwards', animationDelay: fadeInDelay };
     if (type === TransitionTextEnum["fade-out"]) return { animationFillMode: 'forwards', animationDelay: fadeOutDelay };
-
   }
 
-  if (isValidElement(children)) {
-    return cloneElement(children, {
-      ...children.props,
-      className: getClassName(),
-      style: getStyle(),
-    });
-  }
-
-  return <span className={getClassName()} style={getStyle()}>{children}</span>;
+  return <div className={getClassName()} style={getStyle()}>{children}</div>;
 };
 
 export default TransitionText;
