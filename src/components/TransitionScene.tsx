@@ -4,10 +4,12 @@ import React, { ReactNode, useState, Children } from "react";
 
 interface TransitionWrapProps {
   children?: ReactNode;
+  index: number;
+  setIndex: React.Dispatch<React.SetStateAction<number>>;
+  onTransitionEnd: () => void;
 }
 
-const TransitionWrap = ({ children }: TransitionWrapProps) => {
-  const [index, setIndex] = useState<number>(0);
+const TransitionWrap = ({ children, index, setIndex, onTransitionEnd }: TransitionWrapProps) => {
   const [isTransitioning, setIsTransitioning] = useState<boolean>(false);
 
   const handleWheel = (e: React.WheelEvent) => {
@@ -24,6 +26,7 @@ const TransitionWrap = ({ children }: TransitionWrapProps) => {
 
   const handleTransitionEnd = () => {
     setIsTransitioning(false);
+    onTransitionEnd?.();
   };
 
   return (

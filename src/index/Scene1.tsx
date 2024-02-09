@@ -25,11 +25,11 @@ const Common = dynamic(() => import('@/components/canvas/View').then((mod) => mo
 const Scene1 = () => {
 
   return (
-    <div className='mx-auto flex w-full flex-col flex-wrap items-center p-12 md:flex-row  lg:w-4/5'>
-      <div className='relative my-12 h-48 w-full py-6 sm:w-1/2 md:mb-40'>
-        <View orbit className='relative h-full animate-bounce sm:h-48 sm:w-full'>
+    <div className='mx-auto flex w-full flex-col flex-wrap items-center p-12 md:flex-row  '>
+      <div className='relative my-12 h-48 w-full' onWheel={(e) => e.stopPropagation()}>
+        <View orbit className='bg-red-100 relative h-full sm:h-64 sm:w-full'>
           <Suspense fallback={null}>
-            <Duck route='/blob' scale={2} position={[0, -1.6, 0]} />
+            <Duck route='/blob' scale={1} position={[0, -0.5, 0]} />
             <Common />
           </Suspense>
         </View>

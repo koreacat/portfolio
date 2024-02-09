@@ -1,9 +1,5 @@
-const Scene3 = () => {
+export default function Scene3() {
   return (
-    <div>
-      scene3
-    </div>
+    <div></div>
   )
 }
-
-export default Scene3;
