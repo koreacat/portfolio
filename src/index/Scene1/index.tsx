@@ -1,26 +1,51 @@
 'use client'
 
-import TransitionContent, { TransitionContentType } from '@/components/TransitionText'
+import TransitionContent, { TransitionContentEnum, TransitionContentType } from '@/components/TransitionText'
 
-interface Scene1Props {
-  transitionType: TransitionContentType;
+function formatDate(date: Date): string {
+  const options = {
+    month: "long",
+    day: "numeric",
+    weekday: "long",
+    hour: "numeric",
+    minute: "numeric",
+    hour12: true,
+    timeZone: "Asia/Seoul",
+  } as Intl.DateTimeFormatOptions;
+  return date.toLocaleString("ko-KR", options);
 }
 
-const Scene1 = ({ transitionType }: Scene1Props) => {
+interface Scene1Props {
+  isTransitionEnd: boolean;
+}
+
+const Scene1 = ({ isTransitionEnd }: Scene1Props) => {
+  const getTransitionType = () => {
+    return isTransitionEnd ? TransitionContentEnum["fade-in"] : TransitionContentEnum["fade-out"];
+  }
+
   return (
-    <div className="flex flex-wrap flex-col items-center justify-center w-full h-full">
-      <TransitionContent className="text-white text-7xl" type={transitionType} fadeInDelay="0s">
-        SKILL
-      </TransitionContent>
+    <TransitionContent type={getTransitionType()} className="relative flex flex-wrap flex-col items-center justify-center w-full h-full">
 
-      <TransitionContent className="text-my-color text-7xl" type={transitionType} fadeInDelay="0.25s">
-        SKILL
-      </TransitionContent>
+      <div className='absolute top-0 right-0 left-0 flex items-center justify-end w-full h-6 bg-white bg-opacity-5 text-sm pr-4'>
+        <div>
+          {formatDate(new Date())}
+        </div>
+      </div>
 
-      <TransitionContent className="text-black text-7xl" type={transitionType} fadeInDelay=".5s">
-        SKILL
-      </TransitionContent>
-    </div>
+      <div>
+        <div>React</div>
+        <div>JS</div>
+        <div>TS</div>
+        <div>Next.js</div>
+        <div>ReactQuery</div>
+        <div>Zustand</div>
+        <div>Mobx</div>
+        <div>Recoil</div>
+      </div>
+
+
+    </TransitionContent>
   )
 }
 

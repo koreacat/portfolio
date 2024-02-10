@@ -1,21 +1,26 @@
-import TransitionContent, { TransitionContentType } from "@/components/TransitionText";
+import TransitionContent, { TransitionContentEnum, TransitionContentType } from "@/components/TransitionText";
 
 interface Scene2Props {
-  transitionType: TransitionContentType;
+  isTransitionEnd: boolean;
 }
 
-export default function Scene2({ transitionType }: Scene2Props) {
+export default function Scene2({ isTransitionEnd }: Scene2Props) {
+
+  const getTransitionType = () => {
+    return isTransitionEnd ? TransitionContentEnum["fade-in-down"] : TransitionContentEnum["fade-out-up"];
+  }
+
   return (
     <div className="flex flex-wrap flex-col items-center justify-center w-full h-full">
-      <TransitionContent className="text-white text-7xl" type={transitionType} fadeInDelay="0s">
+      <TransitionContent className="text-white text-7xl" type={getTransitionType()} fadeInDelay="0s">
         PROJECT
       </TransitionContent>
 
-      <TransitionContent className="text-my-color text-7xl" type={transitionType} fadeInDelay="0.25s">
+      <TransitionContent className="text-my-color text-7xl" type={getTransitionType()} fadeInDelay="0.25s">
         PROJECT
       </TransitionContent>
 
-      <TransitionContent className="text-black text-7xl" type={transitionType} fadeInDelay=".5s">
+      <TransitionContent className="text-black text-7xl" type={getTransitionType()} fadeInDelay=".5s">
         PROJECT
       </TransitionContent>
     </div>
