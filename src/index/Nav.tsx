@@ -14,7 +14,6 @@ const Nav = ({ transitionIndex }: NavProps) => {
       <span className={getClassName(0)} />
       <span className={getClassName(1)} />
       <span className={getClassName(2)} />
-      <span className={getClassName(3)} />
     </div>
   )
 }
