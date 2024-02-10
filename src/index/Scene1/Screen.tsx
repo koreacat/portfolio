@@ -52,7 +52,7 @@ const Screen = ({ }: Screen) => {
   const getFileEls = () => {
     return Object.keys(FileEnum).map((file: FileType) => {
       return (
-        <File name={file} icon={FileIcon[file]} isSelected={selectedFile === file} onClick={() => handleClick(file)} />
+        <File key={file} name={file} icon={FileIcon[file]} isSelected={selectedFile === file} onClick={() => handleClick(file)} />
       )
     })
   }
