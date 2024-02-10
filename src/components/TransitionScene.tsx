@@ -4,7 +4,7 @@ import React, { ReactNode, useState, Children } from "react";
 
 interface TransitionWrapProps {
   children?: ReactNode;
-  onTransitionStart?: (index: number) => void;
+  onTransitionStart?: (startIndex: number, endIndex: number) => void;
   onTransitionEnd?: (index: number) => void;
 }
 
@@ -23,7 +23,7 @@ const TransitionWrap = ({ children, onTransitionEnd, onTransitionStart }: Transi
     if (newIndex >= 0 && newIndex < length) {
       setIndex(newIndex);
       setIsTransitioning(true);
-      onTransitionStart?.(index);
+      onTransitionStart?.(index, newIndex);
     }
   };
 
@@ -36,6 +36,7 @@ const TransitionWrap = ({ children, onTransitionEnd, onTransitionStart }: Transi
 
     const deltaY = e.touches[0].clientY - touchStartY;
     const threshold = 50; // Adjust this threshold as needed
+
     if (Math.abs(deltaY) > threshold) {
       const newIndex = index + (deltaY > 0 ? -1 : 1);
       const length = Children.count(children);
@@ -43,7 +44,7 @@ const TransitionWrap = ({ children, onTransitionEnd, onTransitionStart }: Transi
       if (newIndex >= 0 && newIndex < length) {
         setIndex(newIndex);
         setIsTransitioning(true);
-        onTransitionStart?.(index);
+        onTransitionStart?.(index, newIndex);
       }
     }
   };
@@ -85,7 +86,7 @@ interface SceneProps extends React.HTMLAttributes<HTMLDivElement> {
 
 const Scene = (props: SceneProps) => {
   return (
-    <div {...props} className={`shrink-0 w-screen h-screen text-my-color ${props?.className}`}>
+    <div {...props} className={`shrink-0 w-100 h-screen text-my-color ${props?.className}`}>
       {props?.children}
     </div>
   )

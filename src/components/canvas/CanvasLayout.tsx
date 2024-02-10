@@ -10,11 +10,9 @@ const CanvasLayout = ({ children }) => {
   return (
     <div
       ref={ref}
+      className='relative w-full h-full'
       style={{
-        position: 'relative',
-        width: ' 100%',
-        height: '100%',
-        overflow: 'auto',
+        overflow: 'hidden',
         touchAction: 'auto',
       }}
     >

@@ -17,3 +17,79 @@
     overflow: hidden;
   }
 }
+
+@layer components {
+  .mouseArea {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    opacity: .8;
+  }
+
+  .mouse {
+    height: 30px;
+    width: 18px;
+    border: 2px solid #9b9b9b;
+    border-radius: 14px;
+  }
+
+  .wheel {
+    width: 4px;
+    height: 4px;
+    margin: 5px auto;
+    border: 2px solid #9b9b9b;
+    border-radius: 8px;
+  }
+
+  .mouseArrowArea {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    gap: 0px;
+    margin-top: 2px;
+  }
+
+  .mouseArrow {
+    display: block;
+    width: 8px;
+    height: 8px;
+    transform: rotate(45deg);
+    border-right: 2px solid #9b9b9b;
+    border-bottom: 2px solid #9b9b9b;
+    animation: mouse-scroll 1s infinite;
+    animation-direction: alternate;
+    animation-delay: .2s;
+  }
+
+  .mouseArrow:first-child {
+    animation-delay: 0;
+  }
+
+  .mouseArrow:last-child {
+    animation-delay: .4s;
+  }
+
+  @keyframes mouse-scroll {
+    0% {
+      opacity: 0;
+    }
+
+    50% {
+      opacity: 0.5;
+    }
+
+    100% {
+      opacity: 1;
+    }
+  }
+
+  .point {
+    width: 10px;
+    height: 10px;
+    background: #9b9b9b;
+    border-radius: 50%;
+    opacity: .8;
+    transition: transform .3s ease-in-out;
+  }
+}

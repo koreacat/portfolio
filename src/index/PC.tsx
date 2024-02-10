@@ -22,11 +22,11 @@ function Model({ open, ...props }) {
     const t = state.clock.getElapsedTime();
     groupRef.current.rotation.x = THREE.MathUtils.lerp(groupRef.current.rotation.x, open ? Math.cos(t / 10) / 10 + 0.25 : 0, 0.01);
     groupRef.current.position.y = THREE.MathUtils.lerp(groupRef.current.position.y, open ? -2.6 : -4.3, 0.01);
-    groupRef.current.position.z = THREE.MathUtils.lerp(groupRef.current.position.z, open ? 20 : 0, 0.01);
+    groupRef.current.position.z = THREE.MathUtils.lerp(groupRef.current.position.z, open ? 35 : 0, 0.02);
     screenRef.current.rotation.x = THREE.MathUtils.lerp(screenRef.current.rotation.x, open ? -0.425 : 1.575, 0.02);
   })
 
-  const newMaterial = new THREE.MeshStandardMaterial({ color: '#262620' });
+  const newMaterial = new THREE.MeshStandardMaterial({ color: '#dddddd' });
 
   return (
     <group ref={groupRef} {...props} dispose={null}>
@@ -55,7 +55,7 @@ interface PCProps {
 const PC = ({ open }: PCProps) => {
   return (
     <div className='fixed flex items-center top-0 w-full h-full'>
-      <web.main className='w-full h-full md:h-full'>
+      <web.main className='w-full h-full min-h-[600px]'>
         <Canvas dpr={[1, 2]} camera={{ position: [0, 0, -30], fov: 35 }}>
           <Suspense fallback={null}>
             <group rotation={[0, Math.PI, 0]}>

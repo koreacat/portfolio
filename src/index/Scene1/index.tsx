@@ -1,6 +1,6 @@
 'use client'
 
-import TransitionText, { TransitionTextType } from '@/components/TransitionText'
+import TransitionContent, { TransitionContentType } from '@/components/TransitionText'
 import dynamic from 'next/dynamic'
 import { Suspense } from 'react'
 
@@ -24,37 +24,31 @@ const View = dynamic(() => import('@/components/canvas/View').then((mod) => mod.
 const Common = dynamic(() => import('@/components/canvas/View').then((mod) => mod.Common), { ssr: false })
 
 interface Scene1Props {
-  transitionType: TransitionTextType;
+  transitionType: TransitionContentType;
 }
 
 const Scene1 = ({ transitionType }: Scene1Props) => {
   return (
-    <div className='flex w-full flex-col flex-wrap items-center'>
-      <div className='relative h-48 w-full sm:h-64' onWheel={(e) => e.stopPropagation()}>
-        <View orbit className='relative h-full sm:h-64 '>
+    <div className="flex flex-wrap flex-col items-center justify-center w-full h-full">
+      {/* <div className='relative h-48 w-full sm:h-96' onWheel={(e) => e.stopPropagation()}>
+        <View orbit className='relative h-full sm:h-96 bg-red-100'>
           <Suspense fallback={null}>
-            <Duck route='/blob' scale={1} position={[0, -0.5, 0]} />
+            <Duck route='/blob' scale={1} position={[0, -1, 0]} />
             <Common />
           </Suspense>
         </View>
-      </div>
+      </div> */}
+      <TransitionContent className="text-white text-7xl" type={transitionType} fadeInDelay="0s">
+        SKILL
+      </TransitionContent>
 
+      <TransitionContent className="text-my-color text-7xl" type={transitionType} fadeInDelay="0.25s">
+        SKILL
+      </TransitionContent>
 
-      <TransitionText className='text-black text-3xl' type={transitionType} fadeInDelay='1s'>
-        👋 안녕하세요!
-      </TransitionText>
-
-      <TransitionText className='text-black text-3xl' type={transitionType} fadeInDelay='1.5s'>
-        동료와 경험을 나누며
-      </TransitionText>
-
-      <TransitionText className='text-black text-3xl' type={transitionType} fadeInDelay='2s'>
-        성장의 기쁨을 함께하는
-      </TransitionText>
-
-      <TransitionText className='text-black text-3xl' type={transitionType} fadeInDelay='2.5s'>
-        개발자 지경민 입니다.
-      </TransitionText>
+      <TransitionContent className="text-black text-7xl" type={transitionType} fadeInDelay=".5s">
+        SKILL
+      </TransitionContent>
     </div>
   )
 }
