@@ -1,5 +1,5 @@
 import TransitionText, { TransitionTextType } from "@/components/TransitionText";
-import IconGit from "./iconGit";
+import IconGit from "./IconGit";
 import IconMail from "./IconMail";
 import IconNotion from "./IconNotion";
 
