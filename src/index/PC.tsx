@@ -1,5 +1,5 @@
 import * as THREE from 'three'
-import React, { Suspense, useRef } from 'react'
+import React, { useRef } from 'react'
 import { Canvas, useFrame, GroupProps } from '@react-three/fiber'
 import { Environment, useGLTF, ContactShadows } from '@react-three/drei'
 import { a as three } from '@react-spring/three'
@@ -57,12 +57,10 @@ const PC = ({ open }: PCProps) => {
     <div className='fixed flex items-center top-0 w-full h-full'>
       <web.main className='w-full h-full min-h-[600px]'>
         <Canvas dpr={[1, 2]} camera={{ position: [0, 0, -30], fov: 35 }}>
-          <Suspense fallback={null}>
-            <group rotation={[0, Math.PI, 0]}>
-              <Model open={open} />
-            </group>
-            <Environment preset="city" />
-          </Suspense>
+          <group rotation={[0, Math.PI, 0]}>
+            <Model open={open} />
+          </group>
+          <Environment preset="city" />
           <ContactShadows position={[0, -4.5, 0]} opacity={0.4} scale={20} blur={1.75} far={4.5} />
         </Canvas>
       </web.main>

@@ -29,24 +29,30 @@ interface Scene3Props {
 
 export default function Scene3({ transitionType }: Scene3Props) {
   return (
-    <div className="flex flex-col gap-2 items-center justify-center w-full h-full md:flex-row md:gap-8">
-      <TransitionContent className="text-my-bg-color text-4xl md:text-6xl" type={transitionType} fadeInDelay=".75s">
-        CONTACT
-      </TransitionContent>
-
-      <div className="flex flex-wrap flex-col gap-1 mt-3">
-        <TransitionContent className="group w-fit" type={transitionType} fadeInDelay="1.50s">
-          <ContactLink href="mailto:koreacat0w0@gmail.com" name="koreacat0w0@gmail.com" icon={<IconMail />} />
+    <div className="flex flex-col items-center justify-center w-full h-full gap-4">
+      <div className="flex flex-col gap-2 items-center justify-center md:flex-row md:gap-8">
+        <TransitionContent className="text-my-bg-color text-4xl md:text-6xl" type={transitionType} fadeInDelay=".75s">
+          CONTACT
         </TransitionContent>
 
-        <TransitionContent className="group w-fit" type={transitionType} fadeInDelay="1.75s">
-          <ContactLink href="https://github.com/koreacat" name="github" icon={<IconGit />} />
-        </TransitionContent>
+        <div className="flex flex-wrap flex-col gap-1 mt-3">
+          <TransitionContent className="group w-fit" type={transitionType} fadeInDelay="1.50s">
+            <ContactLink href="mailto:koreacat0w0@gmail.com" name="koreacat0w0@gmail.com" icon={<IconMail />} />
+          </TransitionContent>
 
-        <TransitionContent className="group w-fit" type={transitionType} fadeInDelay="2s">
-          <ContactLink href="https://koreacat.notion.site/Front-end-Developer-d4b6fda2d59c4c4682d3f43dabf87479" name="notion" icon={<IconNotion />} />
-        </TransitionContent>
+          <TransitionContent className="group w-fit" type={transitionType} fadeInDelay="1.75s">
+            <ContactLink href="https://github.com/koreacat" name="github" icon={<IconGit />} />
+          </TransitionContent>
+
+          <TransitionContent className="group w-fit" type={transitionType} fadeInDelay="2s">
+            <ContactLink href="https://koreacat.notion.site/Front-end-Developer-d4b6fda2d59c4c4682d3f43dabf87479" name="notion" icon={<IconNotion />} />
+          </TransitionContent>
+        </div>
       </div>
+
+      <TransitionContent className="text-my-bg-color text-sm md:text-xl" type={transitionType} fadeInDelay="2.5s">
+        함께 좋은 프로젝트를 만들고 싶어요!
+      </TransitionContent>
     </div>
   )
 }

@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import '@/global.css'
-import CanvasLayout from '@/components/canvas/CanvasLayout'
 
 export const metadata: Metadata = {
   title: "지경민 | Front-end Developer",
@@ -12,7 +11,7 @@ export default function RootLayout({ children }) {
     <html lang='en'>
       <head />
       <body>
-        <CanvasLayout>{children}</CanvasLayout>
+        {children}
       </body>
     </html>
   )
