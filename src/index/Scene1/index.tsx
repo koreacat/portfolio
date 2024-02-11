@@ -1,7 +1,7 @@
 import TransitionContent, { TransitionContentEnum } from '@/components/TransitionContent'
 import React, { useState } from 'react';
 import Topbar from './topbar';
-import Menu from './menu';
+import Skills from './skills';
 import { ProjectEnum, ProjectList, ProjectType } from '@/constant/ProjectEnum';
 import Window from './window';
 import Projects from './projects';
@@ -46,7 +46,7 @@ const Scene1 = ({ isTransitionEnd }: Scene1Props) => {
 
       <Projects selectedProject={selectedProject} setSelectedProject={setSelectedProject} />
 
-      <Menu isTransitionEnd={isTransitionEnd} selectedProject={selectedProject} />
+      <Skills isTransitionEnd={isTransitionEnd} selectedProject={selectedProject} />
 
       <Window isTransitionEnd={isTransitionEnd} selectedProject={selectedProject} setSelectedProject={setSelectedProject} />
     </TransitionContent>

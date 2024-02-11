@@ -9,7 +9,7 @@ interface MenuProps {
   selectedProject: ProjectType;
 }
 
-const Menu = ({ isTransitionEnd, selectedProject }: MenuProps) => {
+const Skills = ({ isTransitionEnd, selectedProject }: MenuProps) => {
   const [menuProjectState, setMenuProjectState] = useState<ProjectType | null>(null);
 
   useEffect(() => {
@@ -51,4 +51,4 @@ const Menu = ({ isTransitionEnd, selectedProject }: MenuProps) => {
   )
 }
 
-export default Menu;
+export default Skills;
