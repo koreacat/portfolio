@@ -1,7 +1,7 @@
 import TransitionContent, { TransitionContentEnum } from "@/components/TransitionContent";
 import { ProjectType } from "@/constant/ProjectEnum";
 import { WindowModeEnum, WindowModeType } from "@/constant/WindowModeEnum";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import WindowBar from "./Windowbar";
 import WindowContents from "./WindowContents";
 
@@ -13,6 +13,12 @@ interface WindowProps {
 
 const Window = ({ isTransitionEnd, selectedProject, setSelectedProject }: WindowProps) => {
   const [windowMode, setWindowMode] = useState<WindowModeType>(WindowModeEnum.NOMAL);
+  const [windowContentsState, setWindowContentsState] = useState<ProjectType | null>(null);
+
+  useEffect(() => {
+    if (selectedProject === null) return;
+    setWindowContentsState(selectedProject);
+  }, [selectedProject]);
 
   const getTransitionType = () => {
     if (selectedProject === null) return TransitionContentEnum["fade-out-shrink"];
@@ -24,13 +30,20 @@ const Window = ({ isTransitionEnd, selectedProject, setSelectedProject }: Window
     if (windowMode === WindowModeEnum.MAXIMIZED) return 'w-full h-full animate-scale-up';
   }
 
+  const handleAnimationEnd = () => {
+    if (selectedProject === null) setWindowContentsState(null);
+  }
+
+  if (!windowContentsState) return null;
+
   return (
-    <TransitionContent type={getTransitionType()}
-      className={`absolute rounded-xl bg-white shadow-black shadow-2xl ${getWindowStyle()}`}>
-
+    <TransitionContent
+      type={getTransitionType()}
+      onAnimationEnd={handleAnimationEnd}
+      className={`absolute rounded-xl bg-white shadow-black shadow-2xl ${getWindowStyle()}`}
+    >
       <WindowBar setSelectedProject={setSelectedProject} setWindowMode={setWindowMode} />
-
-      <WindowContents selectedProject={selectedProject} />
+      <WindowContents selectedProject={selectedProject} windowContentsState={windowContentsState} setWindowContentsState={setWindowContentsState} />
     </TransitionContent>
   )
 }

@@ -18,10 +18,9 @@ interface TransitionContentProps extends React.HTMLAttributes<HTMLDivElement> {
   fadeInDelay?: string;
   fadeOutDelay?: string;
   style?: React.CSSProperties;
-  onTransitionEnd?: () => void;
 }
 
-const TransitionContent = ({ children, className, type, fadeInDelay, fadeOutDelay, style, onTransitionEnd, ...props }: TransitionContentProps) => {
+const TransitionContent = ({ children, className, type, fadeInDelay, fadeOutDelay, style, ...props }: TransitionContentProps) => {
   if (!children) return null;
 
   const getClassName = () => {
@@ -42,7 +41,7 @@ const TransitionContent = ({ children, className, type, fadeInDelay, fadeOutDela
     if (type === TransitionContentEnum["fade-out-shrink"]) return { animationFillMode: 'forwards', animationDelay: fadeOutDelay };
   }
 
-  return <div {...props} className={getClassName()} style={{ ...style, ...getStyle() }} onTransitionEnd={onTransitionEnd}>{children}</div>;
+  return <div {...props} className={getClassName()} style={{ ...style, ...getStyle() }}>{children}</div>;
 };
 
 export default TransitionContent;

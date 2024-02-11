@@ -32,10 +32,20 @@ const Menu = ({ isTransitionEnd, selectedProject }: MenuProps) => {
     return (
       <Skill key={skill} name={skill} icon={SkillIcon[skill]} bg={bg} pointBg={pointBg} isActive={isActive} />
     )
-  })
+  });
+
+  const handleAnimationEnd = () => {
+    if (selectedProject === null) setMenuProjectState(null);
+  }
+
+  if (!menuProjectState) return null;
 
   return (
-    <TransitionContent type={getTransitionType()} className='absolute bottom-3 inset-x-0 flex items-start justify-center w-fit mx-auto bg-white rounded-xl bg-opacity-30 p-2 pb-1'>
+    <TransitionContent
+      type={getTransitionType()}
+      onAnimationEnd={handleAnimationEnd}
+      className='absolute bottom-3 inset-x-0 flex items-start justify-center w-fit mx-auto bg-white rounded-xl bg-opacity-30 p-2 pb-1'
+    >
       {skillEls}
     </TransitionContent>
   )
