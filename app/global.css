@@ -119,14 +119,8 @@
   }
 
   .point {
-    width: 10px;
-    height: 10px;
-    background: #9b9b9b;
-    border-radius: 50%;
-    opacity: .8;
     transition: transform .3s ease-in-out;
   }
-
 
   /* skill */
   .skillIconArea {

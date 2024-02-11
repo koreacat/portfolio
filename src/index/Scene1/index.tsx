@@ -9,9 +9,11 @@ import useKeyDown from '@/hooks/useKeyDown';
 
 interface Scene1Props {
   isTransitionEnd: boolean;
+  handleRestart: () => void;
+  handleShutDown: () => void;
 }
 
-const Scene1 = ({ isTransitionEnd }: Scene1Props) => {
+const Scene1 = ({ isTransitionEnd, handleRestart, handleShutDown }: Scene1Props) => {
   const [selectedProject, setSelectedProject] = useState<ProjectType | null>(ProjectEnum.PROFILE);
 
   useKeyDown({
@@ -25,30 +27,28 @@ const Scene1 = ({ isTransitionEnd }: Scene1Props) => {
   }
 
   const handleWheel = (e: React.WheelEvent) => {
+    if (!selectedProject) return;
+    e.stopPropagation();
+
     const wheel = e.deltaY;
     const index = ProjectList.findIndex(project => project === selectedProject);
     const newIndex = index + (wheel > 0 ? 1 : -1);
     const length = ProjectList.length;
 
-    if (selectedProject && newIndex >= 0 && newIndex < length) {
-      e.stopPropagation();
-      return setSelectedProject(ProjectList[newIndex]);
-    }
-
-    if (selectedProject) {
-      e.stopPropagation();
+    if (newIndex >= 0 && newIndex < length) {
+      setSelectedProject(ProjectList[newIndex]);
     }
   }
 
   return (
     <TransitionContent type={getTransitionType()} className="relative flex flex-wrap flex-col items-center justify-center size-full" onWheel={handleWheel}>
-      <Topbar />
-
       <Projects selectedProject={selectedProject} setSelectedProject={setSelectedProject} />
 
       <Skills isTransitionEnd={isTransitionEnd} selectedProject={selectedProject} />
 
       <Window isTransitionEnd={isTransitionEnd} selectedProject={selectedProject} setSelectedProject={setSelectedProject} />
+
+      <Topbar isTransitionEnd={isTransitionEnd} selectedProject={selectedProject} handleRestart={handleRestart} handleShutDown={handleShutDown} />
     </TransitionContent>
   )
 }

@@ -26,8 +26,8 @@ const Window = ({ isTransitionEnd, selectedProject, setSelectedProject }: Window
   }
 
   const getWindowStyle = () => {
-    if (windowMode === WindowModeEnum.NOMAL) return 'top-12 w-fit max-w-3xl animate-scale-down';
-    if (windowMode === WindowModeEnum.MAXIMIZED) return 'w-full';
+    if (windowMode === WindowModeEnum.NOMAL) return 'top-12 w-fit max-w-3xl';
+    if (windowMode === WindowModeEnum.MAXIMIZED) return 'w-full bottom-0';
   }
 
   const handleAnimationEnd = () => {
@@ -43,7 +43,7 @@ const Window = ({ isTransitionEnd, selectedProject, setSelectedProject }: Window
       className={`absolute rounded-xl bg-white shadow-black shadow-2xl ${getWindowStyle()}`}
       onWheel={e => e.stopPropagation()}
       style={{
-        height: windowMode === 'NOMAL' ? 'calc(100% - 200px)' : '100%',
+        height: windowMode === 'NOMAL' ? 'calc(100% - 200px)' : 'calc(100% - 24px)',
         minHeight: windowMode === 'NOMAL' ? '360px' : undefined,
       }}
     >

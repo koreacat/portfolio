@@ -3,14 +3,15 @@
 import React, { ReactNode, useState, Children } from "react";
 
 interface TransitionWrapProps {
+  index: number;
+  setIndex: React.Dispatch<React.SetStateAction<number>>;
   children?: ReactNode;
   onTransitionStart?: (startIndex: number, endIndex: number) => void;
   onTransitionEnd?: (index: number) => void;
 }
 
-const TransitionWrap = ({ children, onTransitionEnd, onTransitionStart }: TransitionWrapProps) => {
+const TransitionWrap = ({ index, children, onTransitionEnd, onTransitionStart }: TransitionWrapProps) => {
   const [isTransitioning, setIsTransitioning] = useState<boolean>(false);
-  const [index, setIndex] = useState<number>(0);
   const [touchStartY, setTouchStartY] = useState<number>(0);
 
   const handleWheel = (e: React.WheelEvent) => {
@@ -21,7 +22,6 @@ const TransitionWrap = ({ children, onTransitionEnd, onTransitionStart }: Transi
     const length = Children.count(children);
 
     if (newIndex >= 0 && newIndex < length) {
-      setIndex(newIndex);
       setIsTransitioning(true);
       onTransitionStart?.(index, newIndex);
     }
@@ -42,7 +42,6 @@ const TransitionWrap = ({ children, onTransitionEnd, onTransitionStart }: Transi
       const length = Children.count(children);
 
       if (newIndex >= 0 && newIndex < length) {
-        setIndex(newIndex);
         setIsTransitioning(true);
         onTransitionStart?.(index, newIndex);
       }
@@ -60,6 +59,7 @@ const TransitionWrap = ({ children, onTransitionEnd, onTransitionStart }: Transi
 
   return (
     <div
+      id={'area'}
       className="size-full overflow-hidden"
       onWheel={handleWheel}
       onTouchStart={handleTouchStart}

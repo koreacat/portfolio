@@ -14,6 +14,7 @@ import Loading from "./Loading"
 const TrasitionStyle = { transition: 'background .5s ease-in-out' };
 
 const Index = () => {
+  const [index, setIndex] = useState<number>(0);
   const [transitionIndex, setTransitionIndex] = useState<number>(0);
   const [open, setOpen] = useState(false);
   const [scene1ClassName, setScene1ClassName] = useState<string>('bg-transtarent');
@@ -24,13 +25,30 @@ const Index = () => {
   const isLoaded = progress === 100;
 
   const handleTransitionStart = (startIndex: number, endIndex: number) => {
-    setOpen(true);
+    if (startIndex === endIndex) return;
+
+    if (startIndex === 0 && endIndex === 2) {
+      setIndex(1);
+      setTransitionIndex(null);
+      handleSceneClassName(startIndex, 1);
+      return;
+    };
+
+    if (startIndex === 2 && endIndex === 0) {
+      setIndex(1);
+      setTransitionIndex(null);
+      handleSceneClassName(startIndex, 1);
+      return;
+    };
+
+    setIndex(endIndex);
     setTransitionIndex(null);
     handleSceneClassName(startIndex, endIndex);
   }
 
   const handleSceneClassName = (startIndex: number, endIndex: number) => {
     if (startIndex === 0 && endIndex === 1) {
+      setOpen(true);
       setScene1ClassName('bg-my-bg-color');
       return;
     }
@@ -45,12 +63,14 @@ const Index = () => {
       setOpen(false);
       setScene1ClassName('bg-transtarent');
       setScene2ClassName('bg-transtarent');
+      return;
     }
 
     if (startIndex === 2 && endIndex === 1) {
       setOpen(true);
       setScene1ClassName('bg-my-bg-color');
       setScene2ClassName('bg-my-bg-color');
+      return;
     }
   }
 
@@ -62,18 +82,21 @@ const Index = () => {
     return index === transitionIndex;
   }
 
+  const handleRestart = () => handleTransitionStart(1, 0);
+  const handleShutDown = () => handleTransitionStart(1, 2);
+
   return (
     <div className="relative size-full">
       <PC open={open} />
 
       {isLoaded ?
         <>
-          <Transition onTransitionStart={handleTransitionStart} onTransitionEnd={handleTransitionEnd}>
+          <Transition index={index} setIndex={setIndex} onTransitionStart={handleTransitionStart} onTransitionEnd={handleTransitionEnd}>
             <Transition.Scene className={open ? "bg-my-bg-color" : "bg-transparent"} style={TrasitionStyle}>
               <Scene0 isTransitionEnd={getIsTransitionEnd(0)} />
             </Transition.Scene>
             <Transition.Scene className={scene1ClassName} style={TrasitionStyle}>
-              <Scene1 isTransitionEnd={getIsTransitionEnd(1)} />
+              <Scene1 isTransitionEnd={getIsTransitionEnd(1)} handleRestart={handleRestart} handleShutDown={handleShutDown} />
             </Transition.Scene>
             <Transition.Scene className={scene2ClassName} style={TrasitionStyle}>
               <Scene2 isTransitionEnd={getIsTransitionEnd(2)} />
@@ -81,7 +104,7 @@ const Index = () => {
           </Transition>
 
           <TransitionContent type="fade-in-down" fadeInDelay="3s" className="absolute inset-x-0 flex items-center justify-center flex-row gap-16 bottom-8 md:right-8 md:left-auto md:inset-y-0 md:flex-col md:w-4">
-            <Nav transitionIndex={transitionIndex} />
+            <Nav transitionIndex={transitionIndex} index={index} handleTransitionStart={handleTransitionStart} />
           </TransitionContent>
 
           <TransitionContent type={transitionIndex === 2 ? 'fade-out-up' : 'fade-in-down'} fadeInDelay="3s" className="hidden md:flex absolute w-4 items-center justify-end flex-col right-8 bottom-8">

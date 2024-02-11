@@ -1,4 +1,4 @@
-import TransitionContent, { TransitionContentEnum, TransitionContentType } from "@/components/TransitionContent";
+import TransitionContent, { TransitionContentEnum } from "@/components/TransitionContent";
 
 
 interface Scene0Props {

@@ -22,15 +22,15 @@ export default function Scene2({ isTransitionEnd }: Scene2Props) {
         </TransitionContent>
 
         <div className="flex flex-wrap flex-col gap-1 mt-3">
-          <TransitionContent className="group w-fit" type={getTransitionType()} fadeInDelay="1.50s">
+          <TransitionContent className="group w-fit" type={getTransitionType()} onTransitionEnd={e => e.stopPropagation()} fadeInDelay="1.50s">
             <ContactLink href="mailto:koreacat0w0@gmail.com" name="koreacat0w0@gmail.com" icon={<IconMail />} />
           </TransitionContent>
 
-          <TransitionContent className="group w-fit" type={getTransitionType()} fadeInDelay="1.75s">
+          <TransitionContent className="group w-fit" type={getTransitionType()} onTransitionEnd={e => e.stopPropagation()} fadeInDelay="1.75s">
             <ContactLink href="https://github.com/koreacat" name="github" icon={<IconGit />} />
           </TransitionContent>
 
-          <TransitionContent className="group w-fit" type={getTransitionType()} fadeInDelay="2s">
+          <TransitionContent className="group w-fit" type={getTransitionType()} onTransitionEnd={e => e.stopPropagation()} fadeInDelay="2s">
             <ContactLink href="https://koreacat.notion.site/Front-end-Developer-d4b6fda2d59c4c4682d3f43dabf87479" name="notion" icon={<IconNotion />} />
           </TransitionContent>
         </div>
