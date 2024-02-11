@@ -1,17 +1,13 @@
-import { ProjectIcon, ProjectType, ProjectList } from "@/constant/ProjectEnum";
-import Project from "./Project";
 import React from "react";
+import { ProjectIcon, ProjectList, ProjectType } from "@/constant/ProjectEnum";
+import Project from "./Project";
 
-interface Screen {
+interface ProjectsProps {
   selectedProject: ProjectType;
   setSelectedProject: React.Dispatch<React.SetStateAction<ProjectType>>;
 }
 
-const Screen = ({
-  selectedProject,
-  setSelectedProject
-}: Screen) => {
-
+const Projects = ({ selectedProject, setSelectedProject }: ProjectsProps) => {
   const handleClick = (file: ProjectType) => {
     setSelectedProject(file);
   }
@@ -35,4 +31,4 @@ const Screen = ({
   )
 }
 
-export default Screen;
+export default Projects;

@@ -1,9 +1,10 @@
 import TransitionContent, { TransitionContentEnum } from '@/components/TransitionContent'
 import React, { useState } from 'react';
-import Topbar from './Topbar';
-import Screen from './Screen';
-import Menu from './Menu';
+import Topbar from './topbar';
+import Menu from './menu';
 import { ProjectEnum, ProjectType } from '@/constant/ProjectEnum';
+import Window from './window';
+import Projects from './projects';
 
 interface Scene1Props {
   isTransitionEnd: boolean;
@@ -16,13 +17,19 @@ const Scene1 = ({ isTransitionEnd }: Scene1Props) => {
     return isTransitionEnd ? TransitionContentEnum["fade-in"] : TransitionContentEnum["fade-out"];
   }
 
+  const handleWheel = (e: React.MouseEvent) => {
+    if (selectedProject) e.stopPropagation();
+  }
+
   return (
-    <TransitionContent type={getTransitionType()} className="relative flex flex-wrap flex-col items-center justify-center w-full h-full">
+    <TransitionContent type={getTransitionType()} className="relative flex flex-wrap flex-col items-center justify-center w-full h-full" onWheel={handleWheel}>
       <Topbar />
 
-      <Screen selectedProject={selectedProject} setSelectedProject={setSelectedProject} />
+      <Projects selectedProject={selectedProject} setSelectedProject={setSelectedProject} />
 
-      <Menu selectedProject={selectedProject} isTransitionEnd={isTransitionEnd} />
+      <Menu isTransitionEnd={isTransitionEnd} selectedProject={selectedProject} />
+
+      <Window isTransitionEnd={isTransitionEnd} selectedProject={selectedProject} setSelectedProject={setSelectedProject} />
     </TransitionContent>
   )
 }

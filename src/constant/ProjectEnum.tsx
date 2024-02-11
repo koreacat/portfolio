@@ -4,6 +4,11 @@ import IconJobflex from "@/components/icon/IconJobflex";
 import IconMollm from "@/components/icon/IconMollm";
 import React from "react";
 import { SkillEnum, SkillList, SkillType } from "./SkillEnum";
+import Profile from "@/index/Scene1/window/contents/Profile";
+import Jobda from "@/index/Scene1/window/contents/Jobda";
+import HRMollm from "@/index/Scene1/window/contents/HRMollm";
+import Builder from "@/index/Scene1/window/contents/Builder";
+import Jobflex from "@/index/Scene1/window/contents/Jobflex";
 
 export enum ProjectEnum {
   'PROFILE' = 'PROFILE',
@@ -31,4 +36,12 @@ export const ProjectSkillList: Record<ProjectType, SkillType[]> = {
   [ProjectEnum['HR MOLLM']]: [SkillEnum.TS, SkillEnum.React, SkillEnum.NextJS, SkillEnum.ReactQuery, SkillEnum.Zustand],
   [ProjectEnum['채용사이트 빌더']]: [SkillEnum.TS, SkillEnum.React, SkillEnum.NextJS, SkillEnum.ReactQuery, SkillEnum.Recoil],
   [ProjectEnum['JOBFLEX']]: [SkillEnum.JS, SkillEnum.React, SkillEnum.Mobx],
+}
+
+export const ProjectContents: Record<ProjectType, React.ReactNode> = {
+  [ProjectEnum['PROFILE']]: <Profile />,
+  [ProjectEnum['JOBDA']]: <Jobda />,
+  [ProjectEnum['HR MOLLM']]: <HRMollm />,
+  [ProjectEnum['채용사이트 빌더']]: <Builder />,
+  [ProjectEnum['JOBFLEX']]: <Jobflex />,
 }

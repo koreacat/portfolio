@@ -1,4 +1,4 @@
-import React, { ReactNode, cloneElement, isValidElement } from "react";
+import React, { ReactNode } from "react";
 
 export enum TransitionContentEnum {
   'fade-in' = 'fade-in',
@@ -6,11 +6,12 @@ export enum TransitionContentEnum {
   'fade-in-down' = 'fade-in-down',
   'fade-out' = 'fade-out',
   'fade-out-up' = 'fade-out-up',
+  'fade-out-shrink' = 'fade-out-shrink',
 }
 
 export type TransitionContentType = keyof typeof TransitionContentEnum;
 
-interface TransitionContentProps {
+interface TransitionContentProps extends React.HTMLAttributes<HTMLDivElement> {
   children?: ReactNode;
   className?: string;
   type: TransitionContentType;
@@ -20,7 +21,7 @@ interface TransitionContentProps {
   onTransitionEnd?: () => void;
 }
 
-const TransitionContent = ({ children, className, type, fadeInDelay, fadeOutDelay, style, onTransitionEnd }: TransitionContentProps) => {
+const TransitionContent = ({ children, className, type, fadeInDelay, fadeOutDelay, style, onTransitionEnd, ...props }: TransitionContentProps) => {
   if (!children) return null;
 
   const getClassName = () => {
@@ -29,6 +30,7 @@ const TransitionContent = ({ children, className, type, fadeInDelay, fadeOutDela
     if (type === TransitionContentEnum["fade-in-down"]) return `${className} opacity-0 animate-fade-in-down`;
     if (type === TransitionContentEnum["fade-out"]) return `${className} opacity-100 animate-fade-out`;
     if (type === TransitionContentEnum["fade-out-up"]) return `${className} opacity-100 animate-fade-out-up`;
+    if (type === TransitionContentEnum["fade-out-shrink"]) return `${className} opacity-100 animate-fade-out-shrink`;
   }
 
   const getStyle = () => {
@@ -37,9 +39,10 @@ const TransitionContent = ({ children, className, type, fadeInDelay, fadeOutDela
     if (type === TransitionContentEnum["fade-in-down"]) return { animationFillMode: 'forwards', animationDelay: fadeInDelay };
     if (type === TransitionContentEnum["fade-out"]) return { animationFillMode: 'forwards', animationDelay: fadeOutDelay };
     if (type === TransitionContentEnum["fade-out-up"]) return { animationFillMode: 'forwards', animationDelay: fadeOutDelay };
+    if (type === TransitionContentEnum["fade-out-shrink"]) return { animationFillMode: 'forwards', animationDelay: fadeOutDelay };
   }
 
-  return <div className={getClassName()} style={{ ...style, ...getStyle() }} onTransitionEnd={onTransitionEnd}>{children}</div>;
+  return <div {...props} className={getClassName()} style={{ ...style, ...getStyle() }} onTransitionEnd={onTransitionEnd}>{children}</div>;
 };
 
 export default TransitionContent;
