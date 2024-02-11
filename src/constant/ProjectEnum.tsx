@@ -1,3 +1,4 @@
+import IconUser from "@/components/icon/IconUser";
 import IconBuilder from "@/components/icon/IconBuilder";
 import IconJobda from "@/components/icon/IconJobda";
 import IconJobflex from "@/components/icon/IconJobflex";
@@ -23,7 +24,7 @@ export type ProjectType = keyof typeof ProjectEnum;
 export const ProjectList = Object.keys(ProjectEnum) as ProjectType[];
 
 export const ProjectIcon: Record<ProjectType, React.ReactNode> = {
-  [ProjectEnum['PROFILE']]: <IconJobda />,
+  [ProjectEnum['PROFILE']]: <IconUser />,
   [ProjectEnum['JOBDA']]: <IconJobda />,
   [ProjectEnum['HR MOLLM']]: <IconMollm />,
   [ProjectEnum['채용사이트 빌더']]: <IconBuilder />,

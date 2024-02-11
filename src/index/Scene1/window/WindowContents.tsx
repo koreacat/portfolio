@@ -1,15 +1,13 @@
 import { ProjectContents, ProjectType } from "@/constant/ProjectEnum";
-import React, { useEffect, useState } from "react";
+import React from "react";
 
 interface WindowContentsProps {
-  selectedProject: ProjectType;
   windowContentsState: ProjectType | null;
-  setWindowContentsState: React.Dispatch<React.SetStateAction<ProjectType | null>>;
 }
 
-const WindowContents = ({ selectedProject, windowContentsState, setWindowContentsState }: WindowContentsProps) => {
+const WindowContents = ({ windowContentsState }: WindowContentsProps) => {
   return (
-    <div className="text-black w-fit py-2 px-4">
+    <div className="overflow-auto text-black w-fit py-2 px-4 rounded-b-lg " style={{ height: 'calc(100% - 40px)' }}>
       {ProjectContents[windowContentsState]}
     </div>
   )
