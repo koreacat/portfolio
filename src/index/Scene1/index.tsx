@@ -1,16 +1,16 @@
-import TransitionContent, { TransitionContentEnum } from '@/components/TransitionText'
+import TransitionContent, { TransitionContentEnum } from '@/components/TransitionContent'
 import React, { useState } from 'react';
 import Topbar from './Topbar';
 import Screen from './Screen';
 import Menu from './Menu';
-import { ProjectType } from '@/constant/ProjectEnum';
+import { ProjectEnum, ProjectType } from '@/constant/ProjectEnum';
 
 interface Scene1Props {
   isTransitionEnd: boolean;
 }
 
 const Scene1 = ({ isTransitionEnd }: Scene1Props) => {
-  const [selectedProject, setSelectedProject] = useState<ProjectType | null>(null);
+  const [selectedProject, setSelectedProject] = useState<ProjectType | null>(ProjectEnum.PROFILE);
 
   const getTransitionType = () => {
     return isTransitionEnd ? TransitionContentEnum["fade-in"] : TransitionContentEnum["fade-out"];
@@ -22,7 +22,7 @@ const Scene1 = ({ isTransitionEnd }: Scene1Props) => {
 
       <Screen selectedProject={selectedProject} setSelectedProject={setSelectedProject} />
 
-      <Menu isTransitionEnd={isTransitionEnd} />
+      <Menu selectedProject={selectedProject} isTransitionEnd={isTransitionEnd} />
     </TransitionContent>
   )
 }

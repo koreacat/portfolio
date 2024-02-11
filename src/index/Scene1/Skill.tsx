@@ -4,15 +4,17 @@ interface SkillProps {
   name: string;
   icon?: React.ReactNode;
   bg?: string;
+  pointBg?: string;
+  isActive?: boolean;
 }
 
-const Skill = ({ name, icon, bg }: SkillProps) => {
+const Skill = ({ name, icon, bg, pointBg, isActive }: SkillProps) => {
   const [showTooltip, setShowTooltip] = useState(false);
 
   return (
-    <div className="relative">
+    <div className={`relative flex flex-col items-center gap-1`}>
       <div
-        className={`overflow-hidden flex items-center justify-center w-10 h-10 rounded-lg bg-${bg}`}
+        className={`overflow-hidden flex items-center justify-center w-10 h-10 rounded-xl ${bg}`}
         onMouseEnter={() => setShowTooltip(true)}
         onMouseLeave={() => setShowTooltip(false)}
       >
@@ -24,6 +26,7 @@ const Skill = ({ name, icon, bg }: SkillProps) => {
           {name}
         </div>
       )}
+      <div className={`w-1 h-1 rounded-full ${isActive && pointBg}`} />
     </div>
   );
 }

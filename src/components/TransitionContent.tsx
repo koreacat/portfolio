@@ -17,9 +17,10 @@ interface TransitionContentProps {
   fadeInDelay?: string;
   fadeOutDelay?: string;
   style?: React.CSSProperties;
+  onTransitionEnd?: () => void;
 }
 
-const TransitionContent = ({ children, className, type, fadeInDelay, fadeOutDelay, style }: TransitionContentProps) => {
+const TransitionContent = ({ children, className, type, fadeInDelay, fadeOutDelay, style, onTransitionEnd }: TransitionContentProps) => {
   if (!children) return null;
 
   const getClassName = () => {
@@ -38,7 +39,7 @@ const TransitionContent = ({ children, className, type, fadeInDelay, fadeOutDela
     if (type === TransitionContentEnum["fade-out-up"]) return { animationFillMode: 'forwards', animationDelay: fadeOutDelay };
   }
 
-  return <div className={getClassName()} style={{ ...style, ...getStyle() }}>{children}</div>;
+  return <div className={getClassName()} style={{ ...style, ...getStyle() }} onTransitionEnd={onTransitionEnd}>{children}</div>;
 };
 
 export default TransitionContent;

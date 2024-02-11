@@ -1,5 +1,3 @@
-
-
 function formatDate(date: Date): string {
   const options = {
     month: "long",

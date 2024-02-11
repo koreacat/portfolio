@@ -1,4 +1,4 @@
-import { ProjectEnum, ProjectIcon, ProjectType } from "@/constant/ProjectEnum";
+import { ProjectIcon, ProjectType, ProjectList } from "@/constant/ProjectEnum";
 import Project from "./Project";
 import React from "react";
 
@@ -16,8 +16,8 @@ const Screen = ({
     setSelectedProject(file);
   }
 
-  const getFileEls = () => {
-    return Object.keys(ProjectEnum).map((file: ProjectType) => {
+  const getProjectEls = () => {
+    return ProjectList.map((file: ProjectType) => {
       const isSelected = selectedProject === file;
 
       return (
@@ -29,7 +29,7 @@ const Screen = ({
   return (
     <div className="relative w-full h-full pt-10 pb-20">
       <div className="absolute left-8 flex flex-col gap-6 ">
-        {getFileEls()}
+        {getProjectEls()}
       </div>
     </div>
   )

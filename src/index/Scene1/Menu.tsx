@@ -1,33 +1,35 @@
-import TransitionContent, { TransitionContentEnum } from '@/components/TransitionText';
-import IconJS from '@/components/icon/IconJS';
-import IconTS from '@/components/icon/IconTS';
-import IconReact from '@/components/icon/IconReact';
-import IconNextJS from '@/components/icon/IconNextJS';
-import IconReactQuery from '@/components/icon/IconReactQuery';
-import IconZustand from '@/components/icon/IconZustand';
-import IconMobx from '@/components/icon/IconMobx';
-import IconRecoil from '@/components/icon/IconRecoil';
+import TransitionContent, { TransitionContentEnum } from '@/components/TransitionContent';
 import Skill from './Skill';
+import { SkillEnum, SkillIcon, SkillList } from '@/constant/SkillEnum';
+import { ProjectSkillList, ProjectType } from '@/constant/ProjectEnum';
 
 interface MenuProps {
   isTransitionEnd: boolean;
+  selectedProject: ProjectType;
 }
 
-const Menu = ({ isTransitionEnd }: MenuProps) => {
+const Menu = ({ isTransitionEnd, selectedProject }: MenuProps) => {
   const getTransitionType = () => {
     return isTransitionEnd ? TransitionContentEnum["fade-in-up"] : TransitionContentEnum["fade-out"];
   }
 
+  const getSkillEls = () => {
+    return SkillList.map((skill) => {
+      const bg = ((skill === SkillEnum.ReactQuery) || (skill === SkillEnum.Zustand)) ? 'bg-white' : undefined;
+      const pointBg = ((skill === SkillEnum.Mobx) || (skill === SkillEnum.Recoil)) ? 'bg-yellow-500' : 'bg-green-500';
+      const isActive = !!ProjectSkillList[selectedProject]?.find((skillType) => skillType === skill);
+
+      if (!isActive) return null;
+
+      return (
+        <Skill name={skill} icon={SkillIcon[skill]} bg={bg} pointBg={pointBg} isActive={isActive} />
+      )
+    })
+  }
+
   return (
-    <TransitionContent type={getTransitionType()} fadeInDelay='.5s' className='absolute bottom-1 right-0 left-0 flex items-center justify-center gap-2 w-fit mx-auto bg-white rounded-xl bg-opacity-30 p-2 pb-3'>
-      <Skill name={'JS'} icon={<IconJS />} />
-      <Skill name={'TS'} icon={<IconTS />} />
-      <Skill name={'react'} icon={<IconReact />} />
-      <Skill name={'Next.js'} icon={<IconNextJS />} />
-      <Skill name={'ReactQuery'} icon={<IconReactQuery />} bg={'white'} />
-      <Skill name={'Zustand'} icon={<IconZustand />} bg={'white'} />
-      <Skill name={'Mobx'} icon={<IconMobx />} />
-      <Skill name={'Recoil'} icon={<IconRecoil />} />
+    <TransitionContent type={getTransitionType()} fadeInDelay='.5s' className='absolute bottom-1 right-0 left-0 flex items-start justify-center gap-2 w-fit mx-auto bg-white rounded-xl bg-opacity-30 p-2 pb-1'>
+      {getSkillEls()}
     </TransitionContent>
   )
 }

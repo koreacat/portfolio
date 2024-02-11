@@ -1,27 +1,9 @@
 import React from "react";
-import TransitionContent, { TransitionContentEnum, TransitionContentType } from "@/components/TransitionText";
+import TransitionContent, { TransitionContentEnum } from "@/components/TransitionContent";
 import IconMail from "../../components/icon/IconMail";
 import IconGit from "../../components/icon/IconGit";
 import IconNotion from "../../components/icon/IconNotion";
-
-interface ContactLinkProps {
-  href: string;
-  name: string;
-  icon?: React.ReactNode;
-}
-
-const ContactLink = ({ href, name, icon }: ContactLinkProps) => {
-  return (
-    <>
-      <a href={href} target="_blank" className="flex items-center justify-center gap-1 text-my-bg-color text-base">
-        {icon}
-        {name}
-      </a>
-      <span className="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-my-bg-color" />
-    </>
-  )
-}
-
+import ContactLink from "./ContactLink";
 
 interface Scene2Props {
   isTransitionEnd: boolean;

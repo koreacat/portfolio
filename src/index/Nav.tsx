@@ -1,10 +1,8 @@
-
 interface NavProps {
   transitionIndex: number;
 }
 
 const Nav = ({ transitionIndex }: NavProps) => {
-
   const getClassName = (index: number) => {
     return `point ${transitionIndex === index && 'animate-pulse scale-150'}`;
   }

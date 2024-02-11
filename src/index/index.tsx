@@ -5,10 +5,11 @@ import Scene0 from "./Scene0"
 import Scene1 from "./Scene1"
 import Scene2 from "./Scene2"
 import PC from "./PC"
-import TransitionContent from "@/components/TransitionText"
+import TransitionContent from "@/components/TransitionContent"
 import Mouse from "./Mouse"
 import Nav from "./Nav"
 import { useProgress } from "@react-three/drei"
+import Loading from "./Loading"
 
 const TrasitionStyle = { transition: 'background .5s ease-in-out' };
 
@@ -88,9 +89,7 @@ const Index = () => {
           </TransitionContent>
         </>
         :
-        <div className="absolute flex flex-col w-full h-full items-center justify-center">
-          <div className="loader" />
-        </div>
+        <Loading />
       }
     </div>
   )
