@@ -13,7 +13,7 @@ function formatDate(date: Date): string {
 
 const Topbar = () => {
   return (
-    <div className='absolute top-0 right-0 left-0 flex items-center justify-end w-full h-6 bg-white bg-opacity-5 text-sm pr-4'>
+    <div className='absolute top-0 inset-x-0 flex items-center justify-end w-full h-6 bg-white bg-opacity-5 text-sm pr-4'>
       <div>
         {formatDate(new Date())}
       </div>

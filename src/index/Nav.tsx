@@ -8,7 +8,7 @@ const Nav = ({ transitionIndex }: NavProps) => {
   }
 
   return (
-    <div className="pointArea flex flex-row md:flex-col items-center justify-center gap-8">
+    <div className="flex flex-row md:flex-col items-center justify-center gap-8">
       <span className={getClassName(0)} />
       <span className={getClassName(1)} />
       <span className={getClassName(2)} />

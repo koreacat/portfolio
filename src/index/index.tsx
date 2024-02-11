@@ -63,7 +63,7 @@ const Index = () => {
   }
 
   return (
-    <div className="relative w-full h-full">
+    <div className="relative size-full">
       <PC open={open} />
 
       {isLoaded ?
@@ -80,7 +80,7 @@ const Index = () => {
             </Transition.Scene>
           </Transition>
 
-          <TransitionContent type="fade-in-down" fadeInDelay="3s" className="absolute right-0 left-0 flex items-center justify-center flex-row gap-16 bottom-8 md:right-8 md:left-auto md:top-0 md:bottom-0 md:flex-col md:w-4">
+          <TransitionContent type="fade-in-down" fadeInDelay="3s" className="absolute inset-x-0 flex items-center justify-center flex-row gap-16 bottom-8 md:right-8 md:left-auto md:inset-y-0 md:flex-col md:w-4">
             <Nav transitionIndex={transitionIndex} />
           </TransitionContent>
 

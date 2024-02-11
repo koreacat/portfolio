@@ -22,7 +22,7 @@ const Scene1 = ({ isTransitionEnd }: Scene1Props) => {
   }
 
   return (
-    <TransitionContent type={getTransitionType()} className="relative flex flex-wrap flex-col items-center justify-center w-full h-full" onWheel={handleWheel}>
+    <TransitionContent type={getTransitionType()} className="relative flex flex-wrap flex-col items-center justify-center size-full" onWheel={handleWheel}>
       <Topbar />
 
       <Projects selectedProject={selectedProject} setSelectedProject={setSelectedProject} />

@@ -60,14 +60,14 @@ const TransitionWrap = ({ children, onTransitionEnd, onTransitionStart }: Transi
 
   return (
     <div
-      className="w-full h-full overflow-hidden"
+      className="size-full overflow-hidden"
       onWheel={handleWheel}
       onTouchStart={handleTouchStart}
       onTouchMove={handleTouchMove}
       onTouchEnd={handleTouchEnd}
       onTransitionEnd={() => handleTransitionEnd(index)}>
       <div
-        className="w-full scrollArea"
+        className="w-full"
         style={{
           transition: isTransitioning ? 'transform .75s ease-in-out' : undefined,
           transform: `translate3d(0, -${index * 100}vh, 0)`
@@ -86,7 +86,7 @@ interface SceneProps extends React.HTMLAttributes<HTMLDivElement> {
 
 const Scene = (props: SceneProps) => {
   return (
-    <div {...props} className={`shrink-0 w-100 h-screen text-my-color ${props?.className}`}>
+    <div {...props} className={`shrink-0 h-screen text-my-color ${props?.className}`}>
       {props?.children}
     </div>
   )

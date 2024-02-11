@@ -23,7 +23,7 @@ const Projects = ({ selectedProject, setSelectedProject }: ProjectsProps) => {
   }
 
   return (
-    <div className="relative w-full h-full pt-10 pb-20">
+    <div className="relative size-full pt-10 pb-20">
       <div className="absolute left-8 flex flex-col gap-6 ">
         {getProjectEls()}
       </div>

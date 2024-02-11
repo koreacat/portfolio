@@ -15,7 +15,7 @@ export default function Scene2({ isTransitionEnd }: Scene2Props) {
   }
 
   return (
-    <div className="flex flex-col items-center justify-center w-full h-full gap-4">
+    <div className="flex flex-col items-center justify-center size-full gap-4">
       <div className="flex flex-col gap-2 items-center justify-center md:flex-row md:gap-8">
         <TransitionContent className="text-my-bg-color text-4xl md:text-6xl" type={getTransitionType()} fadeInDelay=".75s">
           CONTACT

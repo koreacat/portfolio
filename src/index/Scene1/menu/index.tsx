@@ -35,7 +35,7 @@ const Menu = ({ isTransitionEnd, selectedProject }: MenuProps) => {
   })
 
   return (
-    <TransitionContent type={getTransitionType()} className='absolute bottom-3 right-0 left-0 flex items-start justify-center w-fit mx-auto bg-white rounded-xl bg-opacity-30 p-2 pb-1'>
+    <TransitionContent type={getTransitionType()} className='absolute bottom-3 inset-x-0 flex items-start justify-center w-fit mx-auto bg-white rounded-xl bg-opacity-30 p-2 pb-1'>
       {skillEls}
     </TransitionContent>
   )

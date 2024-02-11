@@ -54,8 +54,8 @@ interface PCProps {
 
 const PC = ({ open }: PCProps) => {
   return (
-    <div className='fixed flex items-center top-0 w-full h-full'>
-      <web.main className='w-full h-full min-h-[600px]'>
+    <div className='fixed flex items-center top-0 size-full'>
+      <web.main className='size-full min-h-[600px]'>
         <Canvas dpr={[1, 2]} camera={{ position: [0, 0, -30], fov: 35 }}>
           <group rotation={[0, Math.PI, 0]}>
             <Model open={open} />
