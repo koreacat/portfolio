@@ -6,6 +6,15 @@ module.exports = {
     './src/**/*.{js,ts,jsx,tsx,mdx}',
   ], theme: {
     extend: {
+      height: {
+        'window-normal': 'calc(100% - 200px)',
+        'window-normal-phone': 'calc(100% - 155px)',
+        'window-maximized': 'calc(100% - 24px)',
+        'window-normal-contents-pc': 'calc(100% - 40px)',
+        'window-normal-contents-phone': 'calc(100%)',
+        'window-maximized-contents-pc': 'calc(100% - 40px)',
+        'window-maximized-contents-phone': 'calc(100% - 24px)',
+      },
       colors: {
         'my-bg-color': '#191919',
         'my-color': 'rgba(255, 255, 255, 0.81)',
