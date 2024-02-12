@@ -4,7 +4,7 @@ const Profile = () => {
       <div className="flex flex-col items-center space-y-8">
         <img
           src="/ImgProfile.png"
-          alt="Profile"
+          alt="ImgProfile"
           className="w-32 h-32 rounded-full"
         />
 
@@ -19,6 +19,11 @@ const Profile = () => {
           <p>
             개발자 지경민입니다.
           </p>
+          <br />
+
+          <a className="text-blue-500" target="_blank" href="https://koreacat.notion.site/Front-end-Developer-d4b6fda2d59c4c4682d3f43dabf87479">
+            <p className="italic">이력서 바로 가기</p>
+          </a>
         </div>
 
         <div className="max-w-xl mx-auto">
@@ -79,15 +84,41 @@ const Profile = () => {
                 - aws chime sdk를 활용한 화상 면접 솔루션 개발<br />
               </p>
             </div>
-
-            <hr className="my-4" />
           </div>
 
+          <br />
           <div>
             <h2 className="text-lg font-semibold">EDUCATION</h2>
             <hr className="my-4" />
             <p className="italic">SSAFY 1기 (SW 역량 향상 교육)</p>
             <p className="italic">국립안동대학교 컴퓨터공학과</p>
+          </div>
+
+          <br />
+          <div>
+            <h2 className="text-lg font-semibold">TMI</h2>
+            <hr className="my-4" />
+            <p className="text-sm">
+              😌iNFJ로 예측과 상상을 펼쳐놓는 것을 좋아해요.
+            </p>
+            <p className="text-sm">
+              🌟업무 성향 세 가지를 꼽지면 성과 지향적, 도덕적, 수용적인 성향이에요.
+            </p>
+            <p className="text-sm">
+              🧑‍💻백엔드, 디자이너, 기획자분들과 프로젝트에 대해 이야기하는 것을 좋아해요.
+            </p>
+            <p className="text-sm">
+              🎹피아노를 즐겨치며, 특히 쇼팽을 연주하는 것을 좋아해요.
+            </p>
+            <p className="text-sm">
+              🏊‍♂️배영을 하며 물위에 떠다니는 것을 좋아해요.
+            </p>
+            <p className="text-sm">
+              😸귀여운 고양이를 키우고 있으며, 고양이의 바보같은 영상을 찍어 올리는 것을 좋아해요.
+              <a className="text-blue-500" target="_blank" href="https://www.youtube.com/channel/UC2I4NvqKL1qAPKv31wMRm9Q">
+                <p className="italic">보리스 Boris</p>
+              </a>
+            </p>
           </div>
         </div>
       </div>
