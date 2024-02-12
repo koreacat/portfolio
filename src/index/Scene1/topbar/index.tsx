@@ -1,10 +1,11 @@
 import IconGear from "@/components/icon/IconGear";
 import { ProjectType } from "@/constant/ProjectEnum";
+import useAnimationFrame from "@/hooks/useAnimationFrame";
 import useClickOutside from "@/hooks/useClickOutside";
 import { useEffect, useRef, useState } from "react";
 
-function formatDate(date: Date): string {
-  const options = {
+function formatDate(date: Date, type: 'PC' | 'Phone'): string {
+  const pcOptions = {
     month: "long",
     day: "numeric",
     weekday: "long",
@@ -13,7 +14,14 @@ function formatDate(date: Date): string {
     hour12: true,
     timeZone: "Asia/Seoul",
   } as Intl.DateTimeFormatOptions;
-  return date.toLocaleString("ko-KR", options);
+
+  const phoneOptions = {
+    hour: "numeric",
+    minute: "numeric",
+    hour12: true,
+    timeZone: "Asia/Seoul",
+  } as Intl.DateTimeFormatOptions;
+  return date.toLocaleString("ko-KR", type === 'PC' ? pcOptions : phoneOptions);
 }
 
 interface TopbarProps {
@@ -32,12 +40,17 @@ const Topbar = ({
   const ref = useRef();
   const [menu, setMenu] = useState<'main' | null>(null);
   const isOpen = (menuType: 'main' | null) => menuType === menu;
+  const [date, setDate] = useState(new Date());
 
   useClickOutside(ref, () => setMenu(null));
 
   useEffect(() => {
     setMenu(null);
   }, [isTransitionEnd, selectedProject])
+
+  useAnimationFrame(() => {
+    setDate(new Date());
+  });
 
   return (
     <div className='absolute top-0 inset-x-0 flex items-center justify-between w-full h-6 bg-white bg-opacity-5 text-sm pl-2 pr-4'>
@@ -54,8 +67,9 @@ const Topbar = ({
           )
         }
       </div>
-      <div>
-        {formatDate(new Date())}
+      <div className="m-auto md:m-0">
+        <div className="hidden md:flex">{formatDate(date, 'PC')}</div>
+        <div className="md:hidden">{formatDate(date, 'Phone')}</div>
       </div>
     </div >
   )
