@@ -26,7 +26,7 @@ const Window = ({ isTransitionEnd, selectedProject, setSelectedProject }: Window
   }
 
   const getWindowStyle = () => {
-    if (windowMode === WindowModeEnum.NOMAL) return 'top-12 w-fit max-w-3xl';
+    if (windowMode === WindowModeEnum.NOMAL) return 'top-12 w-fit max-w-full min-h-[200px] rounded-xl  md:max-w-3xl';
     if (windowMode === WindowModeEnum.MAXIMIZED) return 'w-full bottom-0';
   }
 
@@ -40,11 +40,10 @@ const Window = ({ isTransitionEnd, selectedProject, setSelectedProject }: Window
     <TransitionContent
       type={getTransitionType()}
       onAnimationEnd={handleAnimationEnd}
-      className={`absolute rounded-xl bg-white shadow-black shadow-2xl ${getWindowStyle()}`}
+      className={`absolute bg-white shadow-black shadow-2xl ${getWindowStyle()}`}
       onWheel={e => e.stopPropagation()}
       style={{
         height: windowMode === 'NOMAL' ? 'calc(100% - 200px)' : 'calc(100% - 24px)',
-        minHeight: windowMode === 'NOMAL' ? '360px' : undefined,
       }}
     >
       <WindowBar setSelectedProject={setSelectedProject} setWindowMode={setWindowMode} />

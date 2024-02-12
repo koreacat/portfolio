@@ -44,7 +44,9 @@ const Skills = ({ isTransitionEnd, selectedProject }: MenuProps) => {
     <TransitionContent
       type={getTransitionType()}
       onAnimationEnd={handleAnimationEnd}
-      className='absolute bottom-3 inset-x-0 flex items-start justify-center w-fit mx-auto bg-white rounded-xl bg-opacity-30 p-2 pb-1'
+      className='
+        absolute bottom-3 inset-x-0 flex items-start mx-2 bg-white rounded-xl bg-opacity-30 p-2 pb-1
+        md:justify-center md:w-fit md:mx-auto '
     >
       {skillEls}
     </TransitionContent>

@@ -48,8 +48,8 @@ const Topbar = ({
         {
           menu && (
             <div ref={ref} className="absolute top-full flex flex-col items-start w-32 bg-white bg-opacity-80 text-black shadow-black shadow-2xl">
-              <button className="py-1 pl-3 text-left w-full hover:bg-blue-600 hover:text-white" type="button" onClick={handleRestart}>재시동...</button>
-              <button className="py-1 pl-3 text-left w-full hover:bg-blue-600 hover:text-white" type="button" onClick={handleShutDown}>시스템 종료...</button>
+              <button className="py-1 pl-3 text-left w-full hover:bg-blue-600 hover:text-white" type="button" onClick={handleRestart}>다시시작...</button>
+              <button className="py-1 pl-3 text-left w-full hover:bg-blue-600 hover:text-white" type="button" onClick={handleShutDown}>종료...</button>
             </div>
           )
         }

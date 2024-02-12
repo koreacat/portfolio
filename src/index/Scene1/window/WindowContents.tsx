@@ -7,7 +7,7 @@ interface WindowContentsProps {
 
 const WindowContents = ({ windowContentsState }: WindowContentsProps) => {
   return (
-    <div className="overflow-auto text-black w-fit py-2 px-4 rounded-b-lg " style={{ height: 'calc(100% - 40px)' }}>
+    <div className="overflow-x-hidden overflow-y-auto  text-black py-2 px-4 rounded-b-lg " style={{ height: 'calc(100% - 40px)' }}>
       {ProjectContents[windowContentsState]}
     </div>
   )

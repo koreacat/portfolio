@@ -103,7 +103,7 @@ const Index = () => {
             </Transition.Scene>
           </Transition>
 
-          <TransitionContent type="fade-in-down" fadeInDelay="3s" className="absolute inset-x-0 flex items-center justify-center flex-row gap-16 bottom-8 md:right-8 md:left-auto md:inset-y-0 md:flex-col md:w-4">
+          <TransitionContent type="fade-in-down" fadeInDelay="3s" className="absolute hidden md:flex inset-x-0 items-center justify-center flex-col gap-16 bottom-8 right-8 left-auto inset-y-0 :w-4">
             <Nav transitionIndex={transitionIndex} index={index} handleTransitionStart={handleTransitionStart} />
           </TransitionContent>
 

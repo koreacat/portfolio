@@ -118,15 +118,7 @@
     }
   }
 
-  .point {
-    transition: transform .3s ease-in-out;
-  }
-
   /* skill */
-  .skillIconArea {
-    transition: all .3s;
-  }
-
   .skill:hover .skillIconArea {
     transform: scale(2);
     margin: 0 1.5em;

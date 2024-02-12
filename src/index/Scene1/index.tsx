@@ -40,8 +40,18 @@ const Scene1 = ({ isTransitionEnd, handleRestart, handleShutDown }: Scene1Props)
     }
   }
 
+  const handleTouchMove = (e: React.TouchEvent) => {
+    if (!selectedProject) return;
+    e.stopPropagation();
+  }
+
   return (
-    <TransitionContent type={getTransitionType()} className="relative flex flex-wrap flex-col items-center justify-center size-full" onWheel={handleWheel}>
+    <TransitionContent
+      type={getTransitionType()}
+      className="relative flex flex-wrap flex-col items-center justify-center size-full"
+      onWheel={handleWheel}
+      onTouchMove={handleTouchMove}
+    >
       <Projects selectedProject={selectedProject} setSelectedProject={setSelectedProject} />
 
       <Skills isTransitionEnd={isTransitionEnd} selectedProject={selectedProject} />
