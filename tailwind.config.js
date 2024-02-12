@@ -19,6 +19,8 @@ module.exports = {
         'fade-out': 'fade-out-up 0s ease-out',
         'fade-out-up': 'fade-out-up .3s ease-out',
         'fade-out-shrink': 'fade-out-shrink .2s ease-out',
+        'phone-grow': 'phone-grow .5s  ',
+        'phone-shrink': 'phone-shrink .5s '
       },
       keyframes: {
         'fade-in': {
@@ -30,7 +32,7 @@ module.exports = {
           '100%': { opacity: 1, transform: 'translateY(0)' },
         },
         'fade-in-down': {
-          '0%': { opacity: 0, transform: 'translateY(-15%)' },
+          '0%': { opacity: 0, transform: 'translateY(-8px)' },
           '100%': { opacity: 1, transform: 'translateY(0)' },
         },
         'fade-out': {
@@ -45,6 +47,16 @@ module.exports = {
           '0%': { opacity: 1, transform: 'scale(1)' },
           '100%': { opacity: 0, transform: 'scale(0.8)' },
         },
+        'phone-grow': {
+          '0%': { transform: 'scale(1) translate(0, 130%)' },
+          '90%': { transform: 'scale(6) translate(0, -5%)' },
+          '100%': { transform: 'scale(10) translate(0, -5%)' },
+        },
+        'phone-shrink': {
+          '0%': { transform: 'scale(10) translate(0, -5%)' },
+          '10%': { transform: 'scale(6) translate(0, -5%)' },
+          '100%': { transform: 'scale(1) translate(0, 130%)' },
+        }
       },
     },
   },
