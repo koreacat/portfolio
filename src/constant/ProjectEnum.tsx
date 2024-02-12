@@ -19,7 +19,7 @@ export enum ProjectEnum {
   'HR MOLLM' = 'HR MOLLM',
   '채용사이트 빌더' = '채용사이트 빌더',
   'JOBFLEX' = 'JOBFLEX',
-  'WAMEL' = 'WAMEL',
+  // 'WAMEL' = 'WAMEL',
 }
 
 export type ProjectType = keyof typeof ProjectEnum;
@@ -32,7 +32,7 @@ export const ProjectIcon: Record<ProjectType, React.ReactNode> = {
   [ProjectEnum['HR MOLLM']]: <IconMollm />,
   [ProjectEnum['채용사이트 빌더']]: <IconBuilder />,
   [ProjectEnum['JOBFLEX']]: <IconJobflex />,
-  [ProjectEnum['WAMEL']]: <IconWamel />,
+  // [ProjectEnum['WAMEL']]: <IconWamel />,
 }
 
 export const ProjectSkillList: Record<ProjectType, SkillType[]> = {
@@ -41,7 +41,7 @@ export const ProjectSkillList: Record<ProjectType, SkillType[]> = {
   [ProjectEnum['HR MOLLM']]: [SkillEnum.TS, SkillEnum.React, SkillEnum.NextJS, SkillEnum.ReactQuery, SkillEnum.Zustand],
   [ProjectEnum['채용사이트 빌더']]: [SkillEnum.TS, SkillEnum.React, SkillEnum.NextJS, SkillEnum.ReactQuery, SkillEnum.Recoil],
   [ProjectEnum['JOBFLEX']]: [SkillEnum.JS, SkillEnum.React, SkillEnum.Mobx],
-  [ProjectEnum['WAMEL']]: [SkillEnum.TS, SkillEnum.React],
+  // [ProjectEnum['WAMEL']]: [SkillEnum.TS, SkillEnum.React],
 }
 
 export const ProjectContents: Record<ProjectType, React.ReactNode> = {
@@ -50,5 +50,5 @@ export const ProjectContents: Record<ProjectType, React.ReactNode> = {
   [ProjectEnum['HR MOLLM']]: <HRMollm />,
   [ProjectEnum['채용사이트 빌더']]: <Builder />,
   [ProjectEnum['JOBFLEX']]: <Jobflex />,
-  [ProjectEnum['WAMEL']]: <Wamel />,
+  // [ProjectEnum['WAMEL']]: <Wamel />,
 }

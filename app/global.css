@@ -26,7 +26,7 @@
   }
 
   ::-webkit-scrollbar {
-    width: 10px;
+    width: 5px;
     height: 10px;
   }
 
@@ -118,19 +118,27 @@
     }
   }
 
+  .skills::-webkit-scrollbar {
+    display: none;
+  }
+
   /* skill */
-  .skill:hover .skillIconArea {
-    transform: scale(2);
-    margin: 0 1.5em;
-  }
+  @media (min-width: 768px) {
 
-  .skill:hover+.skill .skillIconArea {
-    transform: scale(1.5);
-    margin: 0 1.25em;
-  }
+    /* skill */
+    .skill:hover .skillIconArea {
+      transform: scale(2);
+      margin: 0 1.5em;
+    }
 
-  .skill:hover .tooltip {
-    display: flex;
+    .skill:hover+.skill .skillIconArea {
+      transform: scale(1.5);
+      margin: 0 1.25em;
+    }
+
+    .skill:hover .tooltip {
+      display: flex;
+    }
   }
 
 
