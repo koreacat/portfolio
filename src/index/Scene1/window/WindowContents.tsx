@@ -14,7 +14,7 @@ const WindowContents = ({ windowMode, windowContentsState }: WindowContentsProps
   }
 
   return (
-    <div className={`bg-red-100 overflow-x-hidden overflow-y-auto  text-black py-2 px-4 rounded-b-lg ${getWindowStyle()}`}>
+    <div className={`overflow-x-hidden overflow-y-auto  text-black py-2 px-4 rounded-b-lg ${getWindowStyle()}`}>
       {ProjectContents[windowContentsState]}
     </div>
   )

@@ -26,7 +26,7 @@ const Window = ({ isTransitionEnd, selectedProject, setSelectedProject }: Window
   }
 
   const getWindowStyle = () => {
-    if (windowMode === WindowModeEnum.NOMAL) return 'top-12 w-fit h-window-normal-phone md:h-window-normal max-w-full min-h-[200px] rounded-xl md:max-w-3xl';
+    if (windowMode === WindowModeEnum.NOMAL) return 'top-9 md:top-12 w-fit h-window-normal-phone md:h-window-normal max-w-full min-h-[200px] rounded-xl md:max-w-3xl';
     if (windowMode === WindowModeEnum.MAXIMIZED) return 'w-full h-window-maximized bottom-0';
   }
 

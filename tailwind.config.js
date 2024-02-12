@@ -8,10 +8,10 @@ module.exports = {
     extend: {
       height: {
         'window-normal': 'calc(100% - 200px)',
-        'window-normal-phone': 'calc(100% - 155px)',
+        'window-normal-phone': 'calc(100% - 120px)',
         'window-maximized': 'calc(100% - 24px)',
         'window-normal-contents-pc': 'calc(100% - 40px)',
-        'window-normal-contents-phone': 'calc(100%)',
+        'window-normal-contents-phone': 'calc(100% - 24px)',
         'window-maximized-contents-pc': 'calc(100% - 40px)',
         'window-maximized-contents-phone': 'calc(100% - 24px)',
       },
