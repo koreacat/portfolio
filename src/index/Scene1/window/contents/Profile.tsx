@@ -22,7 +22,7 @@ const Profile = () => {
           <br />
 
           <a target="_blank" href="https://koreacat.notion.site/Front-end-Developer-d4b6fda2d59c4c4682d3f43dabf87479">
-            <p>이력서 바로 가기</p>
+            <p>🔗이력서 바로 가기</p>
           </a>
         </div>
 
