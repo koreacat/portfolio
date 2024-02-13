@@ -147,5 +147,11 @@
     }
   }
 
+  .windowBtn svg {
+    display: none;
+  }
 
+  .windowBtn:hover svg {
+    display: flex;
+  }
 }
