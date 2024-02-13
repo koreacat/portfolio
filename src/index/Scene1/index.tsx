@@ -48,7 +48,7 @@ const Scene1 = ({ isTransitionEnd, handleRestart, handleShutDown }: Scene1Props)
   return (
     <TransitionContent
       type={getTransitionType()}
-      className="relative flex flex-wrap flex-col items-center justify-center size-full"
+      className="relative flex flex-wrap flex-col items-center justify-center w-full h-screen h-dvh"
       onWheel={handleWheel}
       onTouchMove={handleTouchMove}
     >

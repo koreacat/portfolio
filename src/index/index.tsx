@@ -86,7 +86,7 @@ const Index = () => {
   const handleShutDown = () => handleTransitionStart(1, 2);
 
   return (
-    <div className="relative size-full">
+    <div className="relative w-full h-screen h-dvh">
       <Device open={open} />
 
       {isLoaded ?

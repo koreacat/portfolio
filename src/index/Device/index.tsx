@@ -8,7 +8,7 @@ interface DeviceProps {
 
 const Device = ({ open }: DeviceProps) => {
   return (
-    <TransitionContent type="fade-in-down" fadeInDelay="2.5s" className="absolute inset-x-0 flex items-center justify-center size-full">
+    <TransitionContent type="fade-in-down" fadeInDelay="2.5s" className="absolute inset-x-0 flex items-center justify-center w-full h-screen h-dvh">
       <Phone open={open} />
       <PC open={open} />
     </TransitionContent>
