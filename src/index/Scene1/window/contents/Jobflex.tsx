@@ -11,14 +11,8 @@ const Jobflex = () => {
           imgSrc="ImgJobflex.png"
           imgAlt="Jobflex"
           title={'SaaS 채용 솔루션 JOBFLEX'}
-          linkEls={[
-            <a className="text-blue-500" target="_blank" href="https://www.jobflex.com/">
-              <p className="italic">사이트 바로 가기</p>
-            </a>,
-            <a className="text-blue-500" target="_blank" href="https://koreacat.notion.site/JOBFLEX-4b0b6bd7ad2242cd90368ce5b6693edd">
-              <p className="italic">프로젝트 상세 보기</p>
-            </a>
-          ]}
+          siteHref={'https://www.jobflex.com/'}
+          detailHref={'https://koreacat.notion.site/JOBFLEX-4b0b6bd7ad2242cd90368ce5b6693edd'}
         />
 
         <div className="max-w-xl mx-auto">

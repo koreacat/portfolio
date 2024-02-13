@@ -21,8 +21,8 @@ const Profile = () => {
           </p>
           <br />
 
-          <a className="text-blue-500" target="_blank" href="https://koreacat.notion.site/Front-end-Developer-d4b6fda2d59c4c4682d3f43dabf87479">
-            <p className="italic">이력서 바로 가기</p>
+          <a target="_blank" href="https://koreacat.notion.site/Front-end-Developer-d4b6fda2d59c4c4682d3f43dabf87479">
+            <p>이력서 바로 가기</p>
           </a>
         </div>
 

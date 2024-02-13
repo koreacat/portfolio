@@ -11,15 +11,10 @@ const Jobda = () => {
           imgSrc="ImgJobda.png"
           imgAlt="Jobda"
           title={'구직자 채용 플랫폼 JOBDA'}
-          linkEls={[
-            <a className="text-blue-500" target="_blank" href="https://www.jobda.im/">
-              <p className="italic">사이트 바로 가기</p>
-            </a>,
-            <a className="text-blue-500" target="_blank" href="https://koreacat.notion.site/JOBDA-3b17b8919b6e4d46bbc3c88bd22a4598">
-              <p className="italic">프로젝트 상세 보기</p>
-            </a>
-          ]}
+          siteHref={'https://www.jobda.im/'}
+          detailHref={'https://koreacat.notion.site/JOBDA-3b17b8919b6e4d46bbc3c88bd22a4598'}
         />
+
         <div className="max-w-xl mx-auto">
           <div>
             <h2 className="text-lg font-semibold">주요 업무</h2>

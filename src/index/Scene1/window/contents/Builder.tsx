@@ -11,14 +11,8 @@ const Builder = () => {
           imgSrc="ImgBuilder.png"
           imgAlt="Builder"
           title={'채용 사이트 빌더'}
-          linkEls={[
-            <a className="text-blue-500" target="_blank" href="https://recruit.jobda.im/features/attract/builder">
-              <p className="italic">사이트 바로 가기</p>
-            </a>,
-            <a className="text-blue-500" target="_blank" href="https://koreacat.notion.site/b9d3720a1bd2421b9bc14f5090f5dd1d">
-              <p className="italic">프로젝트 상세 보기</p>
-            </a>
-          ]}
+          siteHref={'https://recruit.jobda.im/features/attract/builder'}
+          detailHref={'https://koreacat.notion.site/b9d3720a1bd2421b9bc14f5090f5dd1d'}
         />
         <div className="max-w-xl mx-auto">
           <div>

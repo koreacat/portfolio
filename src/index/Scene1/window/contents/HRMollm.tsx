@@ -11,14 +11,8 @@ const HRMollm = () => {
           imgSrc="ImgMollm.png"
           imgAlt="Mollm"
           title={'인사담당자용 생성형 AI 서비스 MOLLM'}
-          linkEls={[
-            <a className="text-blue-500" target="_blank" href="https://mollm.hlab.im/?email=jgm0531@midasin.com">
-              <p className="italic">사이트 바로 가기</p>
-            </a>,
-            <a className="text-blue-500" target="_blank" href="https://koreacat.notion.site/HR-MOLLM-087458043fde483ea8684b870d9412a9">
-              <p className="italic">프로젝트 상세 보기</p>
-            </a>
-          ]}
+          siteHref={'https://mollm.hlab.im/?email=jgm0531@midasin.com'}
+          detailHref={'https://koreacat.notion.site/HR-MOLLM-087458043fde483ea8684b870d9412a9'}
         />
         <div className="max-w-xl mx-auto">
           <div>

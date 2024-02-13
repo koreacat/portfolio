@@ -24,10 +24,13 @@
 
   ::-webkit-scrollbar-thumb {
     background: #9b9b9b;
+    border-radius: 32px;
+    background-clip: padding-box;
+    border: 6px solid transparent;
   }
 
   ::-webkit-scrollbar {
-    width: 5px;
+    width: 16px;
     height: 10px;
   }
 
@@ -118,6 +121,8 @@
       opacity: 1;
     }
   }
+
+
 
   .skills::-webkit-scrollbar {
     display: none;
