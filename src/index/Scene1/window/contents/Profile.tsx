@@ -5,7 +5,7 @@ const Profile = () => {
         <img
           src="/ImgProfile.png"
           alt="ImgProfile"
-          className="w-32 h-32 rounded-full"
+          className="w-32 h-32 rounded-full shadow"
         />
 
         <div className="text-center">

@@ -8,8 +8,12 @@ interface SkillProps {
 
 const Skill = ({ name, icon, bg, pointBg, isActive }: SkillProps) => {
 
+  const handleClick = () => {
+    console.log('click');
+  }
+
   return (
-    <div className={`skill relative flex flex-col items-center gap-1 px-1`}>
+    <button className={`skill relative flex flex-col items-center gap-1 px-1`} onClick={handleClick}>
       <div className={`skillIconArea overflow-hidden flex items-center justify-center size-10 rounded-xl transition-all duration-300 ${bg}`}>
         {icon}
       </div>
@@ -18,7 +22,7 @@ const Skill = ({ name, icon, bg, pointBg, isActive }: SkillProps) => {
         {name}
       </div>
       <div className={`size-1 rounded-full ${isActive && pointBg}`} />
-    </div>
+    </button>
   );
 }
 
