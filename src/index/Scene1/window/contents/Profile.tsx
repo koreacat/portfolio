@@ -99,7 +99,7 @@ const Profile = () => {
             <h2 className="text-lg font-semibold">TMI</h2>
             <hr className="my-4" />
             <p className="text-sm">
-              😌iNFJ로 예측과 상상을 펼쳐놓는 것을 좋아해요.
+              😌INFJ로 예측과 상상을 펼쳐놓는 것을 좋아해요.
             </p>
             <p className="text-sm">
               🌟업무 성향 세 가지를 꼽지면 성과 지향적, 도덕적, 수용적인 성향이에요.
