@@ -12,14 +12,14 @@ interface WindowBarProps {
 
 const WindowBar = ({ windowMode, setSelectedProject, setWindowMode }: WindowBarProps) => {
   return (
-    <div className={`flex items-center h-6 md:h-10 bg-gray-200 gap-1 px-4 ${windowMode === 'NOMAL' && 'rounded-t-xl'}`}>
-      <button className="windowBtn flex items-center justify-center size-3 rounded-full bg-red-500 hover:bg-red-600" onClick={() => setSelectedProject(null)}>
+    <div className={`flex h-6 items-center gap-1 bg-gray-200 px-4 md:h-10 ${windowMode === 'NOMAL' && 'rounded-t-xl'}`}>
+      <button className="windowBtn flex size-3 items-center justify-center rounded-full bg-red-500 hover:bg-red-600" onClick={() => setSelectedProject(null)}>
         <IconClose />
       </button>
-      <button className="windowBtn flex items-center justify-center size-3 rounded-full bg-yellow-500 hover:bg-yellow-600" onClick={() => setWindowMode(WindowModeEnum.NOMAL)}>
+      <button className="windowBtn flex size-3 items-center justify-center rounded-full bg-yellow-500 hover:bg-yellow-600" onClick={() => setWindowMode(WindowModeEnum.NOMAL)}>
         <IconMini />
       </button>
-      <button className="windowBtn flex items-center justify-center size-3 rounded-full bg-green-500 hover:bg-green-600" onClick={() => setWindowMode(WindowModeEnum.MAXIMIZED)}>
+      <button className="windowBtn flex size-3 items-center justify-center rounded-full bg-green-500 hover:bg-green-600" onClick={() => setWindowMode(WindowModeEnum.MAXIMIZED)}>
         <IconMaxi />
       </button>
     </div>

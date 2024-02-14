@@ -20,7 +20,7 @@ function Model({ open, isInit, setIsInit, ...props }) {
 
   useEffect(() => {
     setIsInit(false);
-  }, []);
+  }, [setIsInit]);
 
   useFrame((state) => {
     if (!groupRef.current) return;
@@ -70,7 +70,7 @@ const PC = ({ open }: PCProps) => {
   const [isInit, setIsInit] = useState(true);
 
   return (
-    <div className='fixed flex items-center top-0 size-full opacity-0 md:opacity-100'>
+    <div className='fixed top-0 flex size-full items-center opacity-0 md:opacity-100'>
       <web.main className='size-full min-h-[600px]'>
         <Canvas dpr={[1, 2]} camera={{ position: [0, 0, -30], fov: 35 }}>
           <group rotation={[0, Math.PI, 0]}>

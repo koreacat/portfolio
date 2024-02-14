@@ -5,7 +5,7 @@ import Line from "./common/Line";
 const Jobda = () => {
 
   return (
-    <div className="max-w-4xl mx-auto py-8">
+    <div className="mx-auto max-w-4xl py-8">
       <div className="flex flex-col items-center space-y-8">
         <Banner
           imgSrc="ImgJobda.png"
@@ -15,7 +15,7 @@ const Jobda = () => {
           detailHref={'https://koreacat.notion.site/JOBDA-3b17b8919b6e4d46bbc3c88bd22a4598'}
         />
 
-        <div className="max-w-xl mx-auto">
+        <div className="mx-auto max-w-xl">
           <div>
             <h2 className="text-lg font-semibold">주요 업무</h2>
             <Line />

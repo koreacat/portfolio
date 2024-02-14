@@ -22,7 +22,7 @@ const WindowContents = ({ windowMode, windowContentsState }: WindowContentsProps
   }
 
   return (
-    <div ref={ref} className={`overflow-x-hidden overflow-y-auto text-black py-2 px-4 md:py-4 md:px-16 rounded-b-lg ${getWindowStyle()}`}>
+    <div ref={ref} className={`overflow-y-auto overflow-x-hidden rounded-b-lg px-4 py-2 text-black md:px-16 md:py-4 ${getWindowStyle()}`}>
       {ProjectContents[windowContentsState]}
     </div>
   )

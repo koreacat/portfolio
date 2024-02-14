@@ -40,7 +40,7 @@ const Window = ({ isTransitionEnd, selectedProject, setSelectedProject }: Window
     <TransitionContent
       type={getTransitionType()}
       onAnimationEnd={handleAnimationEnd}
-      className={`absolute bg-white md:shadow-black md:shadow-2xl ${getWindowStyle()}`}
+      className={`absolute bg-white md:shadow-2xl md:shadow-black ${getWindowStyle()}`}
       onWheel={e => e.stopPropagation()}
     >
       <WindowBar windowMode={windowMode} setSelectedProject={setSelectedProject} setWindowMode={setWindowMode} />

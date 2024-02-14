@@ -1,15 +1,15 @@
 const Profile = () => {
   return (
-    <div className="max-w-4xl mx-auto py-8">
+    <div className="mx-auto max-w-4xl py-8">
       <div className="flex flex-col items-center space-y-8">
         <img
           src="/ImgProfile.png"
           alt="ImgProfile"
-          className="w-32 h-32 rounded-full shadow"
+          className="size-32 rounded-full shadow"
         />
 
         <div className="text-center">
-          <h2 className="text-3xl font-bold mb-2">👋 안녕하세요!</h2>
+          <h2 className="mb-2 text-3xl font-bold">👋 안녕하세요!</h2>
           <p>
             동료와 경험을 나누며
           </p>
@@ -26,7 +26,7 @@ const Profile = () => {
           </a>
         </div>
 
-        <div className="max-w-xl mx-auto">
+        <div className="mx-auto max-w-xl">
           <div>
             <h2 className="text-lg font-semibold">CAREER (2019.08 ~ 2024.02)</h2>
 

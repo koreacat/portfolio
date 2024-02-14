@@ -5,7 +5,7 @@ import Line from "./common/Line";
 const HRMollm = () => {
 
   return (
-    <div className="max-w-4xl mx-auto py-8">
+    <div className="mx-auto max-w-4xl py-8">
       <div className="flex flex-col items-center space-y-8">
         <Banner
           imgSrc="ImgMollm.png"
@@ -14,7 +14,7 @@ const HRMollm = () => {
           siteHref={'https://mollm.hlab.im/?email=jgm0531@midasin.com'}
           detailHref={'https://koreacat.notion.site/HR-MOLLM-087458043fde483ea8684b870d9412a9'}
         />
-        <div className="max-w-xl mx-auto">
+        <div className="mx-auto max-w-xl">
           <div>
             <h2 className="text-lg font-semibold">주요 업무</h2>
             <Line />
