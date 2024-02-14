@@ -5,7 +5,7 @@ import Line from "./common/Line";
 const Builder = () => {
 
   return (
-    <div className="max-w-4xl mx-auto py-8">
+    <div className="mx-auto max-w-4xl py-8">
       <div className="flex flex-col items-center space-y-8">
         <Banner
           imgSrc="ImgBuilder.png"
@@ -14,7 +14,7 @@ const Builder = () => {
           siteHref={'https://recruit.jobda.im/features/attract/builder'}
           detailHref={'https://koreacat.notion.site/b9d3720a1bd2421b9bc14f5090f5dd1d'}
         />
-        <div className="max-w-xl mx-auto">
+        <div className="mx-auto max-w-xl">
           <div>
             <h2 className="text-lg font-semibold">주요 업무</h2>
             <Line />

@@ -86,7 +86,7 @@ const Index = () => {
   const handleShutDown = () => handleTransitionStart(1, 2);
 
   return (
-    <div className="relative w-full h-screen h-dvh">
+    <div className="relative h-dvh w-full">
       <Device open={open} />
 
       {isLoaded ?
@@ -103,11 +103,11 @@ const Index = () => {
             </Transition.Scene>
           </Transition>
 
-          <TransitionContent type="fade-in-down" fadeInDelay="3s" className="absolute hidden md:flex inset-x-0 items-center justify-center flex-col gap-16 bottom-8 right-8 left-auto inset-y-0 :w-4">
+          <TransitionContent type="fade-in-down" fadeInDelay="3s" className=":w-4 absolute inset-0 bottom-8 left-auto right-8 hidden flex-col items-center justify-center gap-16 md:flex">
             <Nav transitionIndex={transitionIndex} index={index} handleTransitionStart={handleTransitionStart} />
           </TransitionContent>
 
-          <TransitionContent type={transitionIndex === 2 ? 'fade-out-up' : 'fade-in-down'} fadeInDelay="3s" className="hidden md:flex absolute w-4 items-center justify-end flex-col right-8 bottom-8">
+          <TransitionContent type={transitionIndex === 2 ? 'fade-out-up' : 'fade-in-down'} fadeInDelay="3s" className="absolute bottom-8 right-8 hidden w-4 flex-col items-center justify-end md:flex">
             <Mouse />
           </TransitionContent>
         </>

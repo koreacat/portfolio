@@ -15,13 +15,13 @@ export default function Scene2({ isTransitionEnd }: Scene2Props) {
   }
 
   return (
-    <div className="flex flex-col items-center justify-center size-full gap-4">
-      <div className="flex flex-col gap-2 items-center justify-center md:flex-row md:gap-8">
-        <TransitionContent className="text-my-bg-color text-4xl md:text-6xl" type={getTransitionType()} fadeInDelay=".75s">
+    <div className="flex size-full flex-col items-center justify-center gap-4">
+      <div className="flex flex-col items-center justify-center gap-2 md:flex-row md:gap-8">
+        <TransitionContent className="text-4xl text-my-bg-color md:text-6xl" type={getTransitionType()} fadeInDelay=".75s">
           CONTACT
         </TransitionContent>
 
-        <div className="flex flex-wrap flex-col gap-1 mt-3">
+        <div className="mt-3 flex flex-col flex-wrap gap-1">
           <TransitionContent className="group w-fit" type={getTransitionType()} onTransitionEnd={e => e.stopPropagation()} fadeInDelay="1.50s">
             <ContactLink href="mailto:koreacat0w0@gmail.com" name="koreacat0w0@gmail.com" icon={<IconMail />} />
           </TransitionContent>
@@ -36,7 +36,7 @@ export default function Scene2({ isTransitionEnd }: Scene2Props) {
         </div>
       </div>
 
-      <TransitionContent className="text-my-bg-color text-sm md:text-xl" type={getTransitionType()} fadeInDelay="2.5s">
+      <TransitionContent className="text-sm text-my-bg-color md:text-xl" type={getTransitionType()} fadeInDelay="2.5s">
         함께 좋은 프로젝트를 만들고 싶어요!
       </TransitionContent>
     </div>

@@ -53,16 +53,16 @@ const Topbar = ({
   });
 
   return (
-    <div className='absolute top-0 inset-x-0 flex items-center justify-between w-full h-6 bg-white bg-opacity-5 text-sm pl-2 pr-4'>
+    <div className='absolute inset-x-0 top-0 flex h-6 w-full items-center justify-between bg-white bg-opacity-5 pl-2 pr-4 text-sm'>
       <div className="relative flex h-full">
-        <button className={`flex h-full w-6 px-1 justify-center items-center hover:bg-white hover:bg-opacity-10 ${isOpen('main') && 'bg-white bg-opacity-20'}`} onClick={() => setMenu(isOpen('main') ? null : 'main')}>
+        <button className={`flex h-full w-6 items-center justify-center px-1 hover:bg-white hover:bg-opacity-10 ${isOpen('main') && 'bg-white bg-opacity-20'}`} onClick={() => setMenu(isOpen('main') ? null : 'main')}>
           <IconGear />
         </button>
         {
           menu && (
-            <div ref={ref} className="absolute top-full flex flex-col items-start w-32 bg-white bg-opacity-80 text-black shadow-black shadow-2xl">
-              <button className="py-1 pl-3 text-left w-full hover:bg-blue-600 hover:text-white" type="button" onClick={handleRestart}>다시시작...</button>
-              <button className="py-1 pl-3 text-left w-full hover:bg-blue-600 hover:text-white" type="button" onClick={handleShutDown}>종료...</button>
+            <div ref={ref} className="absolute top-full flex w-32 flex-col items-start bg-white bg-opacity-80 text-black shadow-2xl shadow-black">
+              <button className="w-full py-1 pl-3 text-left hover:bg-blue-600 hover:text-white" type="button" onClick={handleRestart}>다시시작...</button>
+              <button className="w-full py-1 pl-3 text-left hover:bg-blue-600 hover:text-white" type="button" onClick={handleShutDown}>종료...</button>
             </div>
           )
         }
