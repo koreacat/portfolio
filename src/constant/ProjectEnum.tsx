@@ -37,10 +37,10 @@ export const ProjectIcon: Record<ProjectType, React.ReactNode> = {
 
 export const ProjectSkillList: Record<ProjectType, SkillType[]> = {
   [ProjectEnum['PROFILE']]: [...SkillList],
-  [ProjectEnum['JOBDA']]: [SkillEnum.JS, SkillEnum.TS, SkillEnum.React, SkillEnum.ReactQuery, SkillEnum.Zustand],
-  [ProjectEnum['HR MOLLM']]: [SkillEnum.TS, SkillEnum.React, SkillEnum.NextJS, SkillEnum.ReactQuery, SkillEnum.Zustand],
-  [ProjectEnum['채용사이트 빌더']]: [SkillEnum.TS, SkillEnum.React, SkillEnum.NextJS, SkillEnum.ReactQuery, SkillEnum.Recoil],
-  [ProjectEnum['JOBFLEX']]: [SkillEnum.JS, SkillEnum.React, SkillEnum.Mobx],
+  [ProjectEnum['JOBDA']]: [SkillEnum.JS, SkillEnum.TS, SkillEnum.React, SkillEnum.NextJS, SkillEnum.ReactQuery, SkillEnum.Zustand],
+  [ProjectEnum['HR MOLLM']]: [SkillEnum.TS, SkillEnum.React, SkillEnum.NextJS, SkillEnum.ReactQuery],
+  [ProjectEnum['채용사이트 빌더']]: [SkillEnum.TS, SkillEnum.React, SkillEnum.NextJS, SkillEnum.ReactQuery, SkillEnum.Recoil, SkillEnum.Zustand],
+  [ProjectEnum['JOBFLEX']]: [SkillEnum.JS, SkillEnum.TS, SkillEnum.React, SkillEnum.Mobx],
   // [ProjectEnum['WAMEL']]: [SkillEnum.TS, SkillEnum.React],
 }
 
