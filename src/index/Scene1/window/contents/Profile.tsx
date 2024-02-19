@@ -49,7 +49,7 @@ const Profile = () => {
             <hr className="my-4" />
 
             <div className="mb-4">
-              <h3 className="text-lg font-semibold">인사담당자용 생성용 AI 서비스 MOLLM</h3>
+              <h3 className="text-lg font-semibold">인사담당자용 생성형 AI 서비스 MOLLM</h3>
               <p>2023.08 ~ 2023.10</p>
               <p className="italic">B2B, Generative AI</p>
               <p className="text-sm">
